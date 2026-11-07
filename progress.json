@@ -1,0 +1,166 @@
+{
+  "items": [
+    {
+      "id": "0-1",
+      "stage": 0,
+      "title": "环境与第一行代码",
+      "materials": "plan/phase0/day01.md",
+      "script": "p0d1",
+      "assertions": 6,
+      "status": "done"
+    },
+    {
+      "id": "0-2",
+      "stage": 0,
+      "title": "数字、字符串、模板字符串",
+      "materials": "plan/phase0/day02.md",
+      "script": "p0d2",
+      "assertions": 7,
+      "status": "in-progress"
+    },
+    {
+      "id": "0-3",
+      "stage": 0,
+      "title": "布尔、比较、if",
+      "materials": "plan/phase0/day03.md",
+      "script": "p0d3",
+      "assertions": 10,
+      "status": "pending"
+    },
+    {
+      "id": "0-4",
+      "stage": 0,
+      "title": "循环",
+      "materials": "plan/phase0/day04.md",
+      "script": "p0d4",
+      "assertions": 0,
+      "status": "not-delivered"
+    },
+    {
+      "id": "0-5",
+      "stage": 0,
+      "title": "函数",
+      "materials": "plan/phase0/day05.md",
+      "script": "p0d5",
+      "assertions": 0,
+      "status": "not-delivered"
+    },
+    {
+      "id": "0-6",
+      "stage": 0,
+      "title": "数组基础",
+      "materials": "plan/phase0/day06.md",
+      "script": "p0d6",
+      "assertions": 0,
+      "status": "not-delivered"
+    },
+    {
+      "id": "0-7",
+      "stage": 0,
+      "title": "对象基础",
+      "materials": "plan/phase0/day07.md",
+      "script": "p0d7",
+      "assertions": 0,
+      "status": "not-delivered"
+    },
+    {
+      "id": "0-8",
+      "stage": 0,
+      "title": "常用数组方法",
+      "materials": "plan/phase0/day08.md",
+      "script": "p0d8",
+      "assertions": 0,
+      "status": "not-delivered"
+    },
+    {
+      "id": "0-9",
+      "stage": 0,
+      "title": "小项目：命令行待办清单",
+      "materials": "plan/phase0/day09.md",
+      "script": "p0d9",
+      "assertions": 0,
+      "status": "not-delivered"
+    },
+    {
+      "id": "1-1",
+      "stage": 1,
+      "title": "变量、作用域、值 vs 引用",
+      "materials": "plan/phase1/day01.md",
+      "script": "day1",
+      "assertions": 10,
+      "status": "paused"
+    },
+    {
+      "id": "1-2",
+      "stage": 1,
+      "title": "数据类型与类型转换",
+      "materials": "plan/phase1/day02.md",
+      "script": "day2",
+      "assertions": 14,
+      "status": "paused"
+    },
+    {
+      "id": "1-3",
+      "stage": 1,
+      "title": "函数、this、闭包",
+      "materials": "plan/phase1/day03.md",
+      "script": "day3",
+      "assertions": 9,
+      "status": "paused"
+    },
+    {
+      "id": "1-4",
+      "stage": 1,
+      "title": "对象、解构、展开",
+      "materials": "plan/phase1/day04.md",
+      "script": "day4",
+      "assertions": 13,
+      "status": "paused"
+    },
+    {
+      "id": "1-5",
+      "stage": 1,
+      "title": "数组与数组方法",
+      "materials": "plan/phase1/day05.md",
+      "script": "day5",
+      "assertions": 9,
+      "status": "paused"
+    },
+    {
+      "id": "1-6",
+      "stage": 1,
+      "title": "闭包与模块模式",
+      "materials": "plan/phase1/day06.md",
+      "script": "day6",
+      "assertions": 11,
+      "status": "paused"
+    },
+    {
+      "id": "1-7",
+      "stage": 1,
+      "title": "原型链与 class",
+      "materials": "plan/phase1/day07.md",
+      "script": "day7",
+      "assertions": 14,
+      "status": "paused"
+    },
+    {
+      "id": "1-8",
+      "stage": 1,
+      "title": "手写 Promise",
+      "materials": "plan/phase1/day08.md",
+      "script": "day8",
+      "assertions": 12,
+      "status": "paused"
+    },
+    {
+      "id": "1-9",
+      "stage": 1,
+      "title": "async/await 与并发控制",
+      "materials": "plan/phase1/day09.md",
+      "script": "day9",
+      "assertions": 9,
+      "status": "paused"
+    }
+  ]
+}

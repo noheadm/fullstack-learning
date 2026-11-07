@@ -1,0 +1,744 @@
+"TYPE","CONTENT","DESCRIPTION","PRIORITY","INDENT","AUTHOR","RESPONSIBLE","DATE","DATE_LANG","TIMEZONE","DURATION","DURATION_UNIT","DEADLINE","DEADLINE_LANG"
+"meta","view_style=list","","","","","","","","","","","",""
+
+"section","Phase 1｜JavaScript + TypeScript 基础（W1–3）","","","","","","","","","","","",""
+"task","Day 1｜W1 · JS 教程：代码结构与变量 @fullstack @phase1","学习：JS 教程：代码结构与变量
+动手：写 10 个变量声明，用 let/const 对比 var
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 1：JavaScript 核心）","3","1","","","2026-11-02 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 2｜W1 · JS 教程：数据类型、类型转换 @fullstack @phase1","学习：JS 教程：数据类型、类型转换
+动手：写类型判断函数 getType(value) 返回类型名
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 1：JavaScript 核心）","3","1","","","2026-11-03 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 3｜W1 · JS 教程：函数（箭头函数、默认参数） @fullstack @phase1","学习：JS 教程：函数（箭头函数、默认参数）
+动手：写 5 个工具函数（debounce, throttle, deepClone）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 1：JavaScript 核心）","3","1","","","2026-11-04 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 4｜W1 · JS 教程：对象、解构、展开 @fullstack @phase1","学习：JS 教程：对象、解构、展开
+动手：写对象合并、深拷贝、解构赋值的 10 个例子
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 1：JavaScript 核心）","3","1","","","2026-11-05 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 5｜W1 · JS 教程：数组方法（map/filter/reduce） @fullstack @phase1","学习：JS 教程：数组方法（map/filter/reduce）
+动手：用 reduce 实现 groupBy、flatten
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 1：JavaScript 核心）","3","1","","","2026-11-06 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 6｜W1 · JS 教程：闭包、作用域 @fullstack @phase1","学习：JS 教程：闭包、作用域
+动手：写一个计数器闭包 + 模块模式示例
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 1：JavaScript 核心）","3","1","","","2026-11-07 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 7｜W1 · JS 教程：原型链、class @fullstack @phase1","学习：JS 教程：原型链、class
+动手：手写 class 继承链，理解 __proto__
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 1：JavaScript 核心）","3","1","","","2026-11-08 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W1 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2026-11-08 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 8｜W2 · JS 教程：Promise 基础 @fullstack @phase1","学习：JS 教程：Promise 基础
+动手：手写 Promise.all / Promise.race 模拟
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 2：异步 + 模块化）","3","1","","","2026-11-09 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 9｜W2 · JS 教程：async/await @fullstack @phase1","学习：JS 教程：async/await
+动手：用 async/await 改写回调地狱示例
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 2：异步 + 模块化）","3","1","","","2026-11-10 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 10｜W2 · JS 教程：事件循环 @fullstack @phase1","学习：JS 教程：事件循环
+动手：写出 5 道事件循环执行顺序题并解释
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 2：异步 + 模块化）","3","1","","","2026-11-11 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 11｜W2 · JS 教程：Error 处理 @fullstack @phase1","学习：JS 教程：Error 处理
+动手：自定义 Error 类 + try/catch 全局捕获
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 2：异步 + 模块化）","3","1","","","2026-11-12 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 12｜W2 · JS 教程：Modules (ESM) @fullstack @phase1","学习：JS 教程：Modules (ESM)
+动手：创建 math.js + main.js，用 import/export
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 2：异步 + 模块化）","3","1","","","2026-11-13 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 13｜W2 · Git 进阶：branch/rebase/PR @fullstack @phase1","学习：Git 进阶：branch/rebase/PR
+动手：在 GitHub 创建仓库，练习分支合并、解决冲突
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 2：异步 + 模块化）","3","1","","","2026-11-14 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 14｜W2 · 复习 + 整理笔记 @fullstack @phase1","学习：复习 + 整理笔记
+动手：用 Markdown 写本周学习总结
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 2：异步 + 模块化）","3","1","","","2026-11-15 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W2 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2026-11-15 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 15｜W3 · TS 官方：Basic Types @fullstack @phase1","学习：TS 官方：Basic Types
+动手：声明 string/number/boolean/array/tuple/enum
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 3：TypeScript 入门）","3","1","","","2026-11-16 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 16｜W3 · TS 官方：Interface & Type @fullstack @phase1","学习：TS 官方：Interface & Type
+动手：定义 User interface，用 type 写联合类型
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 3：TypeScript 入门）","3","1","","","2026-11-17 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 17｜W3 · TS 官方：Generic @fullstack @phase1","学习：TS 官方：Generic
+动手：写泛型函数 identity<T>() + 泛型接口
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 3：TypeScript 入门）","3","1","","","2026-11-18 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 18｜W3 · TS 官方：Class + Access Modifiers @fullstack @phase1","学习：TS 官方：Class + Access Modifiers
+动手：用 public/private/protected/readonly 写类
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 3：TypeScript 入门）","3","1","","","2026-11-19 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 19｜W3 · TS 官方：Advanced Types @fullstack @phase1","学习：TS 官方：Advanced Types
+动手：类型守卫、映射类型、条件类型
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 3：TypeScript 入门）","3","1","","","2026-11-20 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 20｜W3 · TS 官方：tsconfig.json @fullstack @phase1","学习：TS 官方：tsconfig.json
+动手：初始化项目，strict: true，理解各配置项
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 3：TypeScript 入门）","3","1","","","2026-11-21 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 21｜W3 · 项目：Todo App (Vanilla TS) @fullstack @phase1 @milestone","学习：项目：Todo App (Vanilla TS)
+动手：用纯 TS + HTML/CSS 写 Todo（增删改查 + localStorage）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：01-js-ts-basics.md（Week 3：TypeScript 入门）","1","1","","","2026-11-22 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W3 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2026-11-22 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","阶段验收｜Phase 1｜JavaScript + TypeScript 基础（W1–3） @fullstack @checkpoint","逐项确认：
+- 能用 JS 闭包解决实际问题
+- 理解 Promise 执行顺序
+- 能用 TS 定义 interface / generic
+- 能配置 tsconfig.json
+- 完成 Todo App 并 push GitHub
+全部通过后完成本任务，再进入下一阶段。","2","1","","","2026-11-22 22:00","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"section","Phase 2｜React + TypeScript 前端（W4–6）","","","","","","","","","","","",""
+"task","Day 22｜W4 · react.dev：组件与 JSX @fullstack @phase2","学习：react.dev：组件与 JSX
+动手：创建 Vite React-TS 项目，写 5 个组件
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 4：React 基础 + Hooks）","3","1","","","2026-11-23 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 23｜W4 · react.dev：useState + 事件 @fullstack @phase2","学习：react.dev：useState + 事件
+动手：写计数器、表单输入、Toggle 开关
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 4：React 基础 + Hooks）","3","1","","","2026-11-24 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 24｜W4 · react.dev：useEffect + 生命周期 @fullstack @phase2","学习：react.dev：useEffect + 生命周期
+动手：写数据获取、定时器清理、document.title 修改
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 4：React 基础 + Hooks）","3","1","","","2026-11-25 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 25｜W4 · react.dev：useRef + useMemo @fullstack @phase2","学习：react.dev：useRef + useMemo
+动手：聚焦输入框、缓存计算结果
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 4：React 基础 + Hooks）","3","1","","","2026-11-26 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 26｜W4 · react.dev：useContext + 自定义 Hook @fullstack @phase2","学习：react.dev：useContext + 自定义 Hook
+动手：写 useTheme / useLocalStorage Hook
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 4：React 基础 + Hooks）","3","1","","","2026-11-27 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 27｜W4 · React Router v6 @fullstack @phase2","学习：React Router v6
+动手：实现 3 个页面路由 + 嵌套路由 + 404
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 4：React 基础 + Hooks）","3","1","","","2026-11-28 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 28｜W4 · Tailwind CSS 实战 @fullstack @phase2","学习：Tailwind CSS 实战
+动手：用 Tailwind 重构所有组件样式
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 4：React 基础 + Hooks）","3","1","","","2026-11-29 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W4 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2026-11-29 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 29｜W5 · Zustand 文档 @fullstack @phase2","学习：Zustand 文档
+动手：创建 store，实现全局计数器/用户状态
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 5：状态管理 + 数据请求）","3","1","","","2026-11-30 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 30｜W5 · TanStack Query 文档 @fullstack @phase2","学习：TanStack Query 文档
+动手：用 Query 封装 API 请求（GET/POST）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 5：状态管理 + 数据请求）","3","1","","","2026-12-01 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 31｜W5 · React Hook Form + Zod @fullstack @phase2","学习：React Hook Form + Zod
+动手：写登录/注册表单，带校验和错误提示
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 5：状态管理 + 数据请求）","3","1","","","2026-12-02 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 32｜W5 · shadcn/ui 组件库 @fullstack @phase2","学习：shadcn/ui 组件库
+动手：安装并配置 Button/Input/Dialog/Table
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 5：状态管理 + 数据请求）","3","1","","","2026-12-03 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 33｜W5 · 组件设计模式 @fullstack @phase2","学习：组件设计模式
+动手：写 Compound Component / Render Props 示例
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 5：状态管理 + 数据请求）","3","1","","","2026-12-04 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 34｜W5 · 性能优化 @fullstack @phase2","学习：性能优化
+动手：React.memo / useMemo / useCallback 对比测试
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 5：状态管理 + 数据请求）","3","1","","","2026-12-05 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 35｜W5 · 项目：Portfolio SPA @fullstack @phase2 @milestone","学习：项目：Portfolio SPA
+动手：个人作品集网站（首页/项目/博客列表/联系方式）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 5：状态管理 + 数据请求）","1","1","","","2026-12-06 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W5 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2026-12-06 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 36｜W6 · Next.js App Router 入门 @fullstack @phase2","学习：Next.js App Router 入门
+动手：了解 SSR/SSG，对比 SPA
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 6：进阶 + 项目完善）","3","1","","","2026-12-07 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 37｜W6 · Next.js + TS 项目 @fullstack @phase2 @milestone","学习：Next.js + TS 项目
+动手：将 Portfolio 迁移到 Next.js
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 6：进阶 + 项目完善）","1","1","","","2026-12-08 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 38｜W6 · SEO + Metadata @fullstack @phase2","学习：SEO + Metadata
+动手：添加 meta 标签、Open Graph
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 6：进阶 + 项目完善）","3","1","","","2026-12-09 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 39｜W6 · 部署到 Vercel @fullstack @phase2","学习：部署到 Vercel
+动手：配置 vercel.json，自动部署
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 6：进阶 + 项目完善）","3","1","","","2026-12-10 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 40｜W6 · 英文 README 写作 @fullstack @phase2","学习：英文 README 写作
+动手：为项目写英文 README + 截图
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 6：进阶 + 项目完善）","3","1","","","2026-12-11 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 41｜W6 · 复习 + 整理 @fullstack @phase2","学习：复习 + 整理
+动手：写 React Hooks 速查笔记
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 6：进阶 + 项目完善）","3","1","","","2026-12-12 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 42｜W6 · 项目完成 @fullstack @phase2 @milestone","学习：项目完成
+动手：Portfolio 上线 + GitHub 绿格子
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：02-react-ts.md（Week 6：进阶 + 项目完善）","1","1","","","2026-12-13 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W6 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2026-12-13 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","阶段验收｜Phase 2｜React + TypeScript 前端（W4–6） @fullstack @checkpoint","逐项确认：
+- 能用 React + TS 写函数组件
+- 熟练使用 useState/useEffect/useContext
+- 能用 React Router 实现 SPA 路由
+- 能用 Tailwind 写响应式布局
+- Portfolio SPA 部署上线 + 英文 README
+全部通过后完成本任务，再进入下一阶段。","2","1","","","2026-12-13 22:00","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"section","Phase 3｜Electron 桌面应用（W7–8）","","","","","","","","","","","",""
+"task","Day 43｜W7 · Electron 官方：Quick Start @fullstack @phase3","学习：Electron 官方：Quick Start
+动手：跑通官方 Hello World（无框架）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 7：Electron 基础 + IPC）","3","1","","","2026-12-14 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 44｜W7 · 主进程 vs 渲染进程 @fullstack @phase3","学习：主进程 vs 渲染进程
+动手：写 main.js + index.html，理解进程模型
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 7：Electron 基础 + IPC）","3","1","","","2026-12-15 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 45｜W7 · IPC 通信基础 @fullstack @phase3","学习：IPC 通信基础
+动手：用 ipcMain / ipcRenderer 实现双向通信
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 7：Electron 基础 + IPC）","3","1","","","2026-12-16 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 46｜W7 · contextBridge + preload @fullstack @phase3","学习：contextBridge + preload
+动手：安全暴露 API 到渲染进程
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 7：Electron 基础 + IPC）","3","1","","","2026-12-17 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 47｜W7 · Electron Forge 初始化 @fullstack @phase3","学习：Electron Forge 初始化
+动手：npx create-electron-app my-app --template=vite-typescript
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 7：Electron 基础 + IPC）","3","1","","","2026-12-18 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 48｜W7 · 在 Electron 中加载 React @fullstack @phase3","学习：在 Electron 中加载 React
+动手：配置 Vite，React 作为渲染进程页面
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 7：Electron 基础 + IPC）","3","1","","","2026-12-19 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 49｜W7 · 菜单 + 托盘 + 快捷键 @fullstack @phase3","学习：菜单 + 托盘 + 快捷键
+动手：自定义应用菜单、系统托盘、全局快捷键
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 7：Electron 基础 + IPC）","3","1","","","2026-12-20 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W7 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2026-12-20 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 50｜W8 · electron-store（本地存储） @fullstack @phase3","学习：electron-store（本地存储）
+动手：用 JSON 文件存储用户配置
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 8：桌面项目实战）","3","1","","","2026-12-21 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 51｜W8 · 文件操作（dialog + fs） @fullstack @phase3","学习：文件操作（dialog + fs）
+动手：实现""打开文件/保存文件""对话框
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 8：桌面项目实战）","3","1","","","2026-12-22 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 52｜W8 · 系统通知 + 剪贴板 @fullstack @phase3","学习：系统通知 + 剪贴板
+动手：调用系统通知 API + 读写剪贴板
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 8：桌面项目实战）","3","1","","","2026-12-23 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 53｜W8 · 自动更新（electron-updater） @fullstack @phase3","学习：自动更新（electron-updater）
+动手：配置更新服务器 + 检查更新逻辑
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 8：桌面项目实战）","3","1","","","2026-12-24 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 54｜W8 · 打包配置 @fullstack @phase3","学习：打包配置
+动手：配置 electron-builder，生成 exe/dmg
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 8：桌面项目实战）","3","1","","","2026-12-25 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 55｜W8 · 项目：桌面 Markdown 编辑器 @fullstack @phase3 @milestone","学习：项目：桌面 Markdown 编辑器
+动手：左侧编辑 + 右侧预览 + 本地保存
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 8：桌面项目实战）","1","1","","","2026-12-26 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 56｜W8 · 部署 + 发布 @fullstack @phase3 @milestone","学习：部署 + 发布
+动手：打包发布到 GitHub Releases
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：03-electron.md（Week 8：桌面项目实战）","1","1","","","2026-12-27 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W8 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2026-12-27 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","阶段验收｜Phase 3｜Electron 桌面应用（W7–8） @fullstack @checkpoint","逐项确认：
+- 理解主进程/渲染进程/预加载脚本
+- 能用 IPC 实现进程间通信
+- 能将 React 应用嵌入 Electron
+- 能打包为 exe/dmg 安装包
+- 桌面 Markdown 编辑器完成并发布
+全部通过后完成本任务，再进入下一阶段。","2","1","","","2026-12-27 22:00","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"section","Phase 4｜Node.js + Express 后端（W9–10）","","","","","","","","","","","",""
+"task","Day 57｜W9 · Node.js：模块系统 + path/fs @fullstack @phase4","学习：Node.js：模块系统 + path/fs
+动手：写文件读写脚本，理解 ESM vs CommonJS
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 9：Node.js 基础 + Express）","3","1","","","2026-12-28 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 58｜W9 · Node.js：Event Loop + Stream @fullstack @phase4","学习：Node.js：Event Loop + Stream
+动手：用 Stream 处理大文件复制
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 9：Node.js 基础 + Express）","3","1","","","2026-12-29 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 59｜W9 · Express：路由 + 中间件 @fullstack @phase4","学习：Express：路由 + 中间件
+动手：写 5 个路由 + 自定义日志中间件
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 9：Node.js 基础 + Express）","3","1","","","2026-12-30 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 60｜W9 · Express：请求/响应对象 @fullstack @phase4","学习：Express：请求/响应对象
+动手：解析 query/params/body，返回 JSON
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 9：Node.js 基础 + Express）","3","1","","","2026-12-31 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 61｜W9 · Express：错误处理 @fullstack @phase4","学习：Express：错误处理
+动手：全局错误处理中间件 + 自定义 Error 类
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 9：Node.js 基础 + Express）","3","1","","","2027-01-01 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 62｜W9 · 环境变量 + dotenv @fullstack @phase4","学习：环境变量 + dotenv
+动手：配置 .env + .env.example
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 9：Node.js 基础 + Express）","3","1","","","2027-01-02 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 63｜W9 · 项目结构组织 @fullstack @phase4 @milestone","学习：项目结构组织
+动手：按 controllers/routes/middlewares 拆分
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 9：Node.js 基础 + Express）","1","1","","","2027-01-03 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W9 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-01-03 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 64｜W10 · bcrypt 密码哈希 @fullstack @phase4","学习：bcrypt 密码哈希
+动手：注册接口：密码加密存储
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 10：认证 + 安全 + API 设计）","3","1","","","2027-01-04 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 65｜W10 · JWT 生成与验证 @fullstack @phase4","学习：JWT 生成与验证
+动手：登录返回 token + 鉴权中间件
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 10：认证 + 安全 + API 设计）","3","1","","","2027-01-05 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 66｜W10 · Refresh Token 机制 @fullstack @phase4","学习：Refresh Token 机制
+动手：实现 token 刷新接口
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 10：认证 + 安全 + API 设计）","3","1","","","2027-01-06 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 67｜W10 · 输入校验（Zod） @fullstack @phase4","学习：输入校验（Zod）
+动手：为每个接口添加请求体验证
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 10：认证 + 安全 + API 设计）","3","1","","","2027-01-07 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 68｜W10 · 文件上传（Multer） @fullstack @phase4","学习：文件上传（Multer）
+动手：实现头像/图片上传接口
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 10：认证 + 安全 + API 设计）","3","1","","","2027-01-08 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 69｜W10 · CORS + Helmet + Rate Limit @fullstack @phase4","学习：CORS + Helmet + Rate Limit
+动手：安全配置全套
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 10：认证 + 安全 + API 设计）","3","1","","","2027-01-09 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 70｜W10 · 项目：Blog API v1 @fullstack @phase4 @milestone","学习：项目：Blog API v1
+动手：用户/文章/评论 CRUD（无数据库，用内存数组）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：04-nodejs-backend.md（Week 10：认证 + 安全 + API 设计）","1","1","","","2027-01-10 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W10 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-01-10 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","阶段验收｜Phase 4｜Node.js + Express 后端（W9–10） @fullstack @checkpoint","逐项确认：
+- 能用 Express 写 RESTful 路由
+- 理解中间件机制
+- 能用 JWT 实现登录鉴权
+- 能处理文件上传
+- Blog API 完成（内存版）
+全部通过后完成本任务，再进入下一阶段。","2","1","","","2027-01-10 22:00","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"section","Phase 5｜PostgreSQL + Prisma（W11–13）","","","","","","","","","","","",""
+"task","Day 71｜W11 · PG Tutorial：安装 + psql @fullstack @phase5","学习：PG Tutorial：安装 + psql
+动手：本地安装 PG，创建数据库，用 psql 连接
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 11：PostgreSQL 基础）","3","1","","","2027-01-11 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 72｜W11 · PG Tutorial：CREATE TABLE @fullstack @phase5","学习：PG Tutorial：CREATE TABLE
+动手：设计 users/articles/comments 表
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 11：PostgreSQL 基础）","3","1","","","2027-01-12 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 73｜W11 · PG Tutorial：INSERT/SELECT @fullstack @phase5","学习：PG Tutorial：INSERT/SELECT
+动手：插入测试数据，写 10 种查询
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 11：PostgreSQL 基础）","3","1","","","2027-01-13 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 74｜W11 · PG Tutorial：UPDATE/DELETE @fullstack @phase5","学习：PG Tutorial：UPDATE/DELETE
+动手：写更新/删除 + 软删除设计
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 11：PostgreSQL 基础）","3","1","","","2027-01-14 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 75｜W11 · PG Tutorial：JOIN @fullstack @phase5","学习：PG Tutorial：JOIN
+动手：INNER/LEFT JOIN 查询文章+作者
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 11：PostgreSQL 基础）","3","1","","","2027-01-15 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 76｜W11 · PG Tutorial：GROUP BY + 聚合 @fullstack @phase5","学习：PG Tutorial：GROUP BY + 聚合
+动手：统计每用户文章数
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 11：PostgreSQL 基础）","3","1","","","2027-01-16 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 77｜W11 · SQLZoo 练习 @fullstack @phase5","学习：SQLZoo 练习
+动手：完成 SQLZoo 前 6 节
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 11：PostgreSQL 基础）","3","1","","","2027-01-17 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W11 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-01-17 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 78｜W12 · Prisma 官方：Getting Started @fullstack @phase5","学习：Prisma 官方：Getting Started
+动手：初始化 Prisma，连接 PostgreSQL
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 12：Prisma ORM）","3","1","","","2027-01-18 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 79｜W12 · Prisma Schema @fullstack @phase5","学习：Prisma Schema
+动手：定义 User/Article/Comment model + relation
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 12：Prisma ORM）","3","1","","","2027-01-19 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 80｜W12 · Prisma Client CRUD @fullstack @phase5","学习：Prisma Client CRUD
+动手：用 Prisma Client 替换内存数组
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 12：Prisma ORM）","3","1","","","2027-01-20 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 81｜W12 · Prisma 迁移 @fullstack @phase5","学习：Prisma 迁移
+动手：migrate dev 创建表，migrate reset 重置
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 12：Prisma ORM）","3","1","","","2027-01-21 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 82｜W12 · Prisma 关系查询 @fullstack @phase5","学习：Prisma 关系查询
+动手：include/select 嵌套查询
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 12：Prisma ORM）","3","1","","","2027-01-22 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 83｜W12 · Prisma 事务 @fullstack @phase5","学习：Prisma 事务
+动手：用 $transaction 实现批量操作
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 12：Prisma ORM）","3","1","","","2027-01-23 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 84｜W12 · 项目：Blog API + PG @fullstack @phase5 @milestone","学习：项目：Blog API + PG
+动手：将 Phase 4 的 API 全部接入数据库
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 12：Prisma ORM）","1","1","","","2027-01-24 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W12 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-01-24 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 85｜W13 · PG Tutorial：索引 + EXPLAIN @fullstack @phase5","学习：PG Tutorial：索引 + EXPLAIN
+动手：为常用查询字段加索引
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 13：优化 + 进阶）","3","1","","","2027-01-25 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 86｜W13 · PG Tutorial：事务 + 锁 @fullstack @phase5","学习：PG Tutorial：事务 + 锁
+动手：理解 ACID，写并发安全操作
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 13：优化 + 进阶）","3","1","","","2027-01-26 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 87｜W13 · Prisma 种子数据 @fullstack @phase5","学习：Prisma 种子数据
+动手：写 seed.ts 自动填充测试数据
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 13：优化 + 进阶）","3","1","","","2027-01-27 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 88｜W13 · 分页 + 过滤 + 搜索 @fullstack @phase5","学习：分页 + 过滤 + 搜索
+动手：实现文章列表分页/标签过滤/关键词搜索
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 13：优化 + 进阶）","3","1","","","2027-01-28 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 89｜W13 · 单元测试（Jest + Supertest） @fullstack @phase5","学习：单元测试（Jest + Supertest）
+动手：为 API 写测试用例
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 13：优化 + 进阶）","3","1","","","2027-01-29 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 90｜W13 · 项目完善 @fullstack @phase5 @milestone","学习：项目完善
+动手：添加 Swagger API 文档
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 13：优化 + 进阶）","1","1","","","2027-01-30 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 91｜W13 · Blog CMS 全栈完成 @fullstack @phase5 @milestone","学习：Blog CMS 全栈完成
+动手：Web 前端 + Electron 桌面 + Node API + PG 全部联调
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：05-postgresql-prisma.md（Week 13：优化 + 进阶）","1","1","","","2027-01-31 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W13 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-01-31 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","阶段验收｜Phase 5｜PostgreSQL + Prisma（W11–13） @fullstack @checkpoint","逐项确认：
+- 能独立设计 PostgreSQL 表结构
+- 能用 SQL 写 JOIN/子查询/聚合
+- 能用 Prisma 完成 CRUD + 关系查询
+- Blog CMS 全栈项目完成并部署
+- 写英文 README + API 文档
+全部通过后完成本任务，再进入下一阶段。","2","1","","","2027-01-31 22:00","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"section","Phase 6｜全栈整合 + Docker（W14–16）","","","","","","","","","","","",""
+"task","Day 92｜W14 · Docker 官方：Get Started @fullstack @phase6","学习：Docker 官方：Get Started
+动手：安装 Docker，跑 hello-world
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 14：Docker 基础 + 容器化）","3","1","","","2027-02-01 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 93｜W14 · Dockerfile 编写 @fullstack @phase6","学习：Dockerfile 编写
+动手：为 Node.js 后端写 Dockerfile
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 14：Docker 基础 + 容器化）","3","1","","","2027-02-02 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 94｜W14 · docker-compose 基础 @fullstack @phase6","学习：docker-compose 基础
+动手：写 compose：Node + PostgreSQL
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 14：Docker 基础 + 容器化）","3","1","","","2027-02-03 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 95｜W14 · 多阶段构建 @fullstack @phase6","学习：多阶段构建
+动手：优化镜像大小（production build）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 14：Docker 基础 + 容器化）","3","1","","","2027-02-04 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 96｜W14 · 前端 Docker 化 @fullstack @phase6","学习：前端 Docker 化
+动手：为 React 应用写 Dockerfile
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 14：Docker 基础 + 容器化）","3","1","","","2027-02-05 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 97｜W14 · 全栈 docker-compose @fullstack @phase6","学习：全栈 docker-compose
+动手：一个文件启动全部服务
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 14：Docker 基础 + 容器化）","3","1","","","2027-02-06 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 98｜W14 · 数据卷 + 网络 @fullstack @phase6","学习：数据卷 + 网络
+动手：配置 volume 持久化 + 容器间通信
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 14：Docker 基础 + 容器化）","3","1","","","2027-02-07 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W14 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-02-07 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 99｜W15 · Vercel 部署前端 @fullstack @phase6","学习：Vercel 部署前端
+动手：配置 vercel.json，自动部署
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 15：部署上线）","3","1","","","2027-02-08 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 100｜W15 · Railway 部署后端 @fullstack @phase6","学习：Railway 部署后端
+动手：连接 Railway PostgreSQL
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 15：部署上线）","3","1","","","2027-02-09 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 101｜W15 · 环境变量管理 @fullstack @phase6","学习：环境变量管理
+动手：生产/开发环境区分
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 15：部署上线）","3","1","","","2027-02-10 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 102｜W15 · 域名 + HTTPS @fullstack @phase6","学习：域名 + HTTPS
+动手：配置自定义域名 + SSL
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 15：部署上线）","3","1","","","2027-02-11 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 103｜W15 · GitHub Actions CI @fullstack @phase6","学习：GitHub Actions CI
+动手：配置 lint + test + build 自动运行
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 15：部署上线）","3","1","","","2027-02-12 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 104｜W15 · 自动部署 @fullstack @phase6","学习：自动部署
+动手：push 自动触发部署
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 15：部署上线）","3","1","","","2027-02-13 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 105｜W15 · 健康检查 + 日志 @fullstack @phase6","学习：健康检查 + 日志
+动手：添加 /health 端点 + 日志收集
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 15：部署上线）","3","1","","","2027-02-14 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W15 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-02-14 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 106｜W16 · 实时通信（Socket.io） @fullstack @phase6","学习：实时通信（Socket.io）
+动手：实现简单聊天室
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 16：项目收尾 + 第三个项目）","3","1","","","2027-02-15 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 107｜W16 · 项目③：实时看板 @fullstack @phase6 @milestone","学习：项目③：实时看板
+动手：Trello-lite（拖拽 + 实时同步）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 16：项目收尾 + 第三个项目）","1","1","","","2027-02-16 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 108｜W16 · 项目③ 后端 @fullstack @phase6 @milestone","学习：项目③ 后端
+动手：Socket.io + Express 整合
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 16：项目收尾 + 第三个项目）","1","1","","","2027-02-17 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 109｜W16 · 项目③ 前端 @fullstack @phase6 @milestone","学习：项目③ 前端
+动手：react-beautiful-dnd 拖拽
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 16：项目收尾 + 第三个项目）","1","1","","","2027-02-18 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 110｜W16 · 项目③ 部署 @fullstack @phase6 @milestone","学习：项目③ 部署
+动手：全栈部署上线
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 16：项目收尾 + 第三个项目）","1","1","","","2027-02-19 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 111｜W16 · 整理 GitHub @fullstack @phase6","学习：整理 GitHub
+动手：3 个项目全部有英文 README + Live Demo
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 16：项目收尾 + 第三个项目）","3","1","","","2027-02-20 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 112｜W16 · 写技术博客 @fullstack @phase6 @milestone","学习：写技术博客
+动手：发布第一篇 Dev.to 文章
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：06-fullstack-docker.md（Week 16：项目收尾 + 第三个项目）","1","1","","","2027-02-21 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W16 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-02-21 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","阶段验收｜Phase 6｜全栈整合 + Docker（W14–16） @fullstack @checkpoint","逐项确认：
+- 能写 Dockerfile + docker-compose
+- 全栈项目部署上线（前端 + 后端 + DB）
+- 配置 CI/CD 自动部署
+- 3 个项目全部有 Live Demo + 英文 README
+- 发布至少 1 篇技术博客
+全部通过后完成本任务，再进入下一阶段。","2","1","","","2027-02-21 22:00","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"section","Phase 7｜Remote 求职 + 开源贡献（W17–21）","","","","","","","","","","","",""
+"task","Day 113｜W17 · 英文简历撰写 @fullstack @phase7","学习：英文简历撰写
+动手：技术简历（Skills/Projects/Experience）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 17：简历 + 作品集）","3","1","","","2027-02-22 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 114｜W17 · 简历 Code Review @fullstack @phase7","学习：简历 Code Review
+动手：找人 review / 用 Grammarly 检查
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 17：简历 + 作品集）","3","1","","","2027-02-23 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 115｜W17 · 作品集网站 @fullstack @phase7","学习：作品集网站
+动手：用 Next.js 做个人站点（含项目展示）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 17：简历 + 作品集）","3","1","","","2027-02-24 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 116｜W17 · LinkedIn 优化 @fullstack @phase7","学习：LinkedIn 优化
+动手：英文 Profile + 技术关键词
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 17：简历 + 作品集）","3","1","","","2027-02-25 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 117｜W17 · GitHub Profile README @fullstack @phase7","学习：GitHub Profile README
+动手：美化 GitHub 主页
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 17：简历 + 作品集）","3","1","","","2027-02-26 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 118｜W17 · 准备 Cover Letter 模板 @fullstack @phase7","学习：准备 Cover Letter 模板
+动手：针对不同公司调整
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 17：简历 + 作品集）","3","1","","","2027-02-27 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 119｜W17 · 整理项目截图/GIF @fullstack @phase7 @milestone","学习：整理项目截图/GIF
+动手：每个项目录屏演示
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 17：简历 + 作品集）","1","1","","","2027-02-28 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W17 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-02-28 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 120｜W18 · 找开源项目 @fullstack @phase7 @milestone","学习：找开源项目
+动手：在 GitHub 搜 good first issue
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 18：开源贡献）","1","1","","","2027-03-01 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 121｜W18 · 第一个 PR（修 typo） @fullstack @phase7","学习：第一个 PR（修 typo）
+动手：文档 typo 修复
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 18：开源贡献）","3","1","","","2027-03-02 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 122｜W18 · 第二个 PR（小 bug） @fullstack @phase7","学习：第二个 PR（小 bug）
+动手：修复简单 bug
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 18：开源贡献）","3","1","","","2027-03-03 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 123｜W18 · 第三个 PR（feature） @fullstack @phase7","学习：第三个 PR（feature）
+动手：添加小功能
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 18：开源贡献）","3","1","","","2027-03-04 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 124｜W18 · 维护自己的开源 @fullstack @phase7","学习：维护自己的开源
+动手：发布一个 npm 包 / CLI 工具
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 18：开源贡献）","3","1","","","2027-03-05 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 125｜W18 · 参与社区讨论 @fullstack @phase7","学习：参与社区讨论
+动手：在 Discord/Slack 回答问题
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 18：开源贡献）","3","1","","","2027-03-06 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 126｜W18 · 整理开源贡献记录 @fullstack @phase7","学习：整理开源贡献记录
+动手：在简历中列出贡献
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 18：开源贡献）","3","1","","","2027-03-07 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W18 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-03-07 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 127｜W19 · 写技术博客① @fullstack @phase7","学习：写技术博客①
+动手：学习笔记/教程
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 19：技术写作 + 面试准备）","3","1","","","2027-03-08 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 128｜W19 · 写技术博客② @fullstack @phase7","学习：写技术博客②
+动手：项目复盘/踩坑记录
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 19：技术写作 + 面试准备）","3","1","","","2027-03-09 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 129｜W19 · 写技术博客③ @fullstack @phase7","学习：写技术博客③
+动手：技术对比/选型分析
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 19：技术写作 + 面试准备）","3","1","","","2027-03-10 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 130｜W19 · 算法复习 @fullstack @phase7","学习：算法复习
+动手：LeetCode Easy/Medium 每天 2 题
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 19：技术写作 + 面试准备）","3","1","","","2027-03-11 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 131｜W19 · 系统设计基础 @fullstack @phase7","学习：系统设计基础
+动手：了解 REST API 设计原则
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 19：技术写作 + 面试准备）","3","1","","","2027-03-12 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 132｜W19 · 英语口语练习 @fullstack @phase7","学习：英语口语练习
+动手：技术英语表达（可选）
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 19：技术写作 + 面试准备）","3","1","","","2027-03-13 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 133｜W19 · Mock Interview @fullstack @phase7","学习：Mock Interview
+动手：找人模拟技术面试
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 19：技术写作 + 面试准备）","3","1","","","2027-03-14 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W19 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-03-14 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 134｜W20 · 每天投递 3-5 个 Remote 岗位 @fullstack @phase7 @milestone","学习：每天投递 3-5 个 Remote 岗位
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-15 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 135｜W20 · 每天投递 3-5 个 Remote 岗位 @fullstack @phase7 @milestone","学习：每天投递 3-5 个 Remote 岗位
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-16 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 136｜W20 · 每天投递 3-5 个 Remote 岗位 @fullstack @phase7 @milestone","学习：每天投递 3-5 个 Remote 岗位
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-17 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 137｜W20 · 每天投递 3-5 个 Remote 岗位 @fullstack @phase7 @milestone","学习：每天投递 3-5 个 Remote 岗位
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-18 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 138｜W20 · 每天投递 3-5 个 Remote 岗位 @fullstack @phase7 @milestone","学习：每天投递 3-5 个 Remote 岗位
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-19 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 139｜W20 · 每天投递 3-5 个 Remote 岗位 @fullstack @phase7 @milestone","学习：每天投递 3-5 个 Remote 岗位
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-20 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 140｜W20 · 每天投递 3-5 个 Remote 岗位 @fullstack @phase7 @milestone","学习：每天投递 3-5 个 Remote 岗位
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-21 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W20 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-03-21 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 141｜W21 · 准备面试：复习项目 + 技术栈 @fullstack @phase7 @milestone","学习：准备面试：复习项目 + 技术栈
+动手：整理当天可验证的笔记、练习结果或面试复盘。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-22 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 142｜W21 · 准备面试：复习项目 + 技术栈 @fullstack @phase7 @milestone","学习：准备面试：复习项目 + 技术栈
+动手：整理当天可验证的笔记、练习结果或面试复盘。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-23 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 143｜W21 · 准备面试：复习项目 + 技术栈 @fullstack @phase7 @milestone","学习：准备面试：复习项目 + 技术栈
+动手：整理当天可验证的笔记、练习结果或面试复盘。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-24 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 144｜W21 · 准备面试：复习项目 + 技术栈 @fullstack @phase7 @milestone","学习：准备面试：复习项目 + 技术栈
+动手：整理当天可验证的笔记、练习结果或面试复盘。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-25 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 145｜W21 · 准备面试：复习项目 + 技术栈 @fullstack @phase7 @milestone","学习：准备面试：复习项目 + 技术栈
+动手：整理当天可验证的笔记、练习结果或面试复盘。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-26 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 146｜W21 · 准备面试：复习项目 + 技术栈 @fullstack @phase7 @milestone","学习：准备面试：复习项目 + 技术栈
+动手：整理当天可验证的笔记、练习结果或面试复盘。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-27 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 147｜W21 · 准备面试：复习项目 + 技术栈 @fullstack @phase7 @milestone","学习：准备面试：复习项目 + 技术栈
+动手：整理当天可验证的笔记、练习结果或面试复盘。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-28 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","W21 复盘｜检查完成度与下周安排 @fullstack @weekly @checkpoint","本周完成：统计计划任务完成数。
+学习证据：整理代码提交、笔记或项目链接。
+未完成项：只保留真正必要的内容，并重新安排日期。
+下周调整：写下一个最需要解决的阻塞问题。","2","1","","","2027-03-28 21:30","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
+"task","Day 148｜W21+ · 跟进投递状态 + 调整策略 @fullstack @phase7 @milestone","学习：跟进投递状态 + 调整策略
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-29 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 149｜W21+ · 跟进投递状态 + 调整策略 @fullstack @phase7 @milestone","学习：跟进投递状态 + 调整策略
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-30 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","Day 150｜W21+ · 跟进投递状态 + 调整策略 @fullstack @phase7 @milestone","学习：跟进投递状态 + 调整策略
+动手：保存当天的投递记录，并更新岗位与跟进状态。
+完成标准：专注 120 分钟，并留下可验证的代码、笔记或产出。
+来源：07-remote-job-prep.md（Week 20-21：投递 + 面试）","1","1","","","2027-03-31 20:00","zh_CN","Asia/Ho_Chi_Minh","120","minute","",""
+"task","阶段验收｜Phase 7｜Remote 求职 + 开源贡献（W17–21） @fullstack @checkpoint","逐项确认：
+- 英文简历完成
+- 作品集网站上线
+- GitHub 有 3+ 活跃项目
+- 至少 3 个开源 PR 被合并
+- 至少 3 篇技术博客发布
+- 开始投递 Remote 岗位
+全部通过后完成本任务，再进入下一阶段。","2","1","","","2027-03-31 22:00","zh_CN","Asia/Ho_Chi_Minh","30","minute","",""
