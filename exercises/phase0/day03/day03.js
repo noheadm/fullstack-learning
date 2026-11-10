@@ -5,20 +5,32 @@
 
 /** 满 18 岁返回 true */
 export function canVote(age) {
-  throw new Error("canVote 未实现");
+  return age >= 18;
 }
 
 /** 90+ → "A"，80+ → "B"，70+ → "C"，60+ → "D"，其余 → "F" */
 export function grade(score) {
-  throw new Error("grade 未实现");
+  if (score >= 90) {
+    return "A";
+  }
+  if (score >= 80) {
+    return "B";
+  }
+  if (score >= 70) {
+    return "C";
+  }
+  if (score >= 60) {
+    return "D";
+  } else {
+    return "F";
+  }
 }
-
 /** 偶数返回 true */
 export function isEven(n) {
-  throw new Error("isEven 未实现");
+  return n % 2 === 0;
 }
 
 /** 返回三个数里最大的 */
 export function max3(a, b, c) {
-  throw new Error("max3 未实现");
+  return a >= b && a >= c ? a : b >= a && b >= c ? b : c;
 }

@@ -16,6 +16,8 @@
     "status": "node scripts/status.mjs",
     "p0d1": "node --test \"exercises/phase0/day01/*.test.mjs\"",
     "p0d2": "node --test \"exercises/phase0/day02/*.test.mjs\"",
-    "p0d3": "node --test \"exercises/phase0/day03/*.test.mjs\""
+    "p0d3": "node --test \"exercises/phase0/day03/*.test.mjs\"",
+    "p0d4": "node --test \"exercises/phase0/day04/*.test.mjs\"",
+    "p0d5": "node --test \"exercises/phase0/day05/*.test.mjs\""
   }
 }
