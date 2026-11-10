@@ -16,7 +16,7 @@
       "materials": "plan/phase0/day02.md",
       "script": "p0d2",
       "assertions": 7,
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "id": "0-3",
@@ -25,7 +25,7 @@
       "materials": "plan/phase0/day03.md",
       "script": "p0d3",
       "assertions": 10,
-      "status": "pending"
+      "status": "done"
     },
     {
       "id": "0-4",
@@ -34,7 +34,7 @@
       "materials": "plan/phase0/day04.md",
       "script": "p0d4",
       "assertions": 9,
-      "status": "pending"
+      "status": "in-progress"
     },
     {
       "id": "0-5",
