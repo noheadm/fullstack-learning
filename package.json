@@ -18,6 +18,8 @@
     "p0d2": "node --test \"exercises/phase0/day02/*.test.mjs\"",
     "p0d3": "node --test \"exercises/phase0/day03/*.test.mjs\"",
     "p0d4": "node --test \"exercises/phase0/day04/*.test.mjs\"",
-    "p0d5": "node --test \"exercises/phase0/day05/*.test.mjs\""
+    "p0d5": "node --test \"exercises/phase0/day05/*.test.mjs\"",
+    "p0d6": "node --test \"exercises/phase0/day06/*.test.mjs\"",
+    "p0d7": "node --test \"exercises/phase0/day07/*.test.mjs\""
   }
 }

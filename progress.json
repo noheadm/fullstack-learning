@@ -43,7 +43,7 @@
       "materials": "plan/phase0/day05.md",
       "script": "p0d5",
       "assertions": 11,
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "id": "0-6",
@@ -51,8 +51,8 @@
       "title": "数组基础",
       "materials": "plan/phase0/day06.md",
       "script": "p0d6",
-      "assertions": 0,
-      "status": "not-delivered"
+      "assertions": 11,
+      "status": "in-progress"
     },
     {
       "id": "0-7",
@@ -60,8 +60,8 @@
       "title": "对象基础",
       "materials": "plan/phase0/day07.md",
       "script": "p0d7",
-      "assertions": 0,
-      "status": "not-delivered"
+      "assertions": 12,
+      "status": "pending"
     },
     {
       "id": "0-8",
