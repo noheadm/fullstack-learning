@@ -68,3 +68,7 @@ test("12. sortByAge：不修改原数组", () => {
   sortByAge(users);
   assert.deepStrictEqual(users.map((u) => u.age), [30, 18]);
 });
+
+test("13. firstOver：找到的值是 0 也要返回 0，不能返回 null", () => {
+  assert.equal(firstOver([0, 5], -1), 0);
+});
