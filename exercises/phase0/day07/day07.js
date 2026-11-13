@@ -5,30 +5,33 @@
 
 /** 返回 { name, age } */
 export function makeUser(name, age) {
-  throw new Error("makeUser 未实现");
+  return { name, age };
 }
 
 /** 返回 age 加 1 的新对象，不修改入参 */
 export function incrementAge(user) {
-  throw new Error("incrementAge 未实现");
+  return { ...user, age: user.age + 1 };
 }
 
 /** 返回键的数量 */
 export function countKeys(obj) {
-  throw new Error("countKeys 未实现");
+  return Object.keys(obj).length;
 }
 
 /** 键存在返回 true */
 export function hasKey(obj, key) {
-  throw new Error("hasKey 未实现");
+  return key in obj;
 }
 
 /** 返回 obj[key]；键不存在返回 null */
 export function readValue(obj, key) {
-  throw new Error("readValue 未实现");
+  if (key in obj) {
+    return obj[key];
+  }
+  return null;
 }
 
 /** { city, street } → "城市-街道" */
 export function formatAddress(addr) {
-  throw new Error("formatAddress 未实现");
+  return `${addr.city}-${addr.street}`;
 }

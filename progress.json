@@ -52,7 +52,7 @@
       "materials": "plan/phase0/day06.md",
       "script": "p0d6",
       "assertions": 11,
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "id": "0-7",
@@ -61,7 +61,7 @@
       "materials": "plan/phase0/day07.md",
       "script": "p0d7",
       "assertions": 12,
-      "status": "pending"
+      "status": "in-progress"
     },
     {
       "id": "0-8",
@@ -69,8 +69,8 @@
       "title": "常用数组方法",
       "materials": "plan/phase0/day08.md",
       "script": "p0d8",
-      "assertions": 0,
-      "status": "not-delivered"
+      "assertions": 12,
+      "status": "pending"
     },
     {
       "id": "0-9",
@@ -78,8 +78,8 @@
       "title": "小项目：命令行待办清单",
       "materials": "plan/phase0/day09.md",
       "script": "p0d9",
-      "assertions": 0,
-      "status": "not-delivered"
+      "assertions": 12,
+      "status": "pending"
     },
     {
       "id": "1-1",
