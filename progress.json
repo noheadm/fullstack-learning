@@ -79,7 +79,7 @@
       "materials": "plan/phase0/day09.md",
       "script": "p0d9",
       "assertions": 12,
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "id": "1-1",
@@ -88,7 +88,7 @@
       "materials": "plan/phase1/day01.md",
       "script": "day1",
       "assertions": 10,
-      "status": "paused"
+      "status": "in-progress"
     },
     {
       "id": "1-2",

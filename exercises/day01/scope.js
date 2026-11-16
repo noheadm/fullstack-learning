@@ -7,12 +7,18 @@
 
 /** @returns {number[]} 期望 [3, 3, 3] */
 export function varInLoop() {
-  // TODO: 用 var 声明循环变量，把 () => i 收集进数组再调用
-  throw new Error("varInLoop 未实现");
+  const fns = [];
+  for (var i = 0; i < 3; i++) {
+    fns.push(() => i);
+  }
+  return fns.map(f => f());
 }
 
 /** @returns {number[]} 期望 [0, 1, 2] */
 export function letInLoop() {
-  // TODO: 同上，把 var 换成 let
-  throw new Error("letInLoop 未实现");
+  const fns = [];
+  for (let i = 0; i < 3; i++) {
+    fns.push(() => i);
+  }
+  return fns.map(f => f());
 }
