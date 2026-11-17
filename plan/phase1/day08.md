@@ -1,7 +1,14 @@
-# Day 8 · Promise（4h）
+# Day 8 · Promise（2h）
 
-> 目标：从零写出能跑的 `MyPromise`，搞清 `then` 为什么必须异步、四种组合器的差别。
-> 代码：`exercises/day08/`，测试：`npm run day8`
+> **2026-11-17 拆分**：原来 12 条断言全是"手写 Promise"，属于一次跨两档。现拆成：
+>
+> - **1-8a**：Promise 的**用法**（`all` / `any` / `allSettled` / `promisify`），8 条断言 → `npm run day8a`
+> - **1-8b**：**手写** `MyPromise` 状态机，12 条断言 → `npm run day8b`
+>
+> 先做 1-8a。1-8b 是阶段 1 最难的一项，慢慢来。
+
+> 目标：先会用 Promise，再理解它的状态机。
+> 代码：`exercises/day08/`（`promise-usage.js` 对应 8a，`mypromise.js` 对应 8b）
 
 ---
 

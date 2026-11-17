@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { debounce, throttle, deepClone, once, memoize } from "./fns.js";
+import { debounce, throttle, once, memoize } from "./fns.js";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -48,57 +48,7 @@ test("4. throttle 首次立即执行 + 末尾补一次", async () => {
   assert.deepStrictEqual(calls, [1, 3], "末尾应补执行最后一次参数");
 });
 
-test("5. deepClone 处理循环引用", () => {
-  const source = { name: "a" };
-  source.self = source;
-  const copy = deepClone(source);
-  assert.notEqual(copy, source);
-  assert.equal(copy.self, copy);
-  assert.equal(copy.name, "a");
-});
-
-test("6. deepClone 处理 Date / Map / Set / 嵌套数组", () => {
-  const source = {
-    date: new Date("2020-01-01T00:00:00Z"),
-    map: new Map([["k", { v: 1 }]]),
-    set: new Set([1, 2]),
-    arr: [{ x: 1 }],
-    re: /abc/gi,
-  };
-  const copy = deepClone(source);
-
-  assert.ok(copy.date instanceof Date);
-  assert.equal(copy.date.getTime(), source.date.getTime());
-
-  assert.ok(copy.map instanceof Map);
-  assert.equal(copy.map.get("k").v, 1);
-  assert.notEqual(copy.map.get("k"), source.map.get("k"));
-
-  assert.ok(copy.set instanceof Set);
-  assert.deepStrictEqual([...copy.set], [1, 2]);
-
-  assert.deepStrictEqual(copy.arr, [{ x: 1 }]);
-  assert.notEqual(copy.arr, source.arr);
-  assert.notEqual(copy.arr[0], source.arr[0]);
-
-  assert.ok(copy.re instanceof RegExp);
-  assert.equal(copy.re.source, "abc");
-  assert.equal(copy.re.flags, "gi");
-
-  copy.arr[0].x = 99;
-  assert.equal(source.arr[0].x, 1, "改副本不应影响原对象");
-});
-
-test("7. deepClone 原始值与函数", () => {
-  assert.equal(deepClone(5), 5);
-  assert.equal(deepClone(null), null);
-  assert.equal(deepClone("s"), "s");
-  const fn = () => 1;
-  assert.equal(deepClone(fn), fn, "函数按引用返回");
-  assert.equal(deepClone({ fn }).fn, fn);
-});
-
-test("8. once 只执行一次", () => {
+test("5. once 只执行一次", () => {
   let count = 0;
   const f = once((v) => {
     count += 1;
@@ -109,7 +59,7 @@ test("8. once 只执行一次", () => {
   assert.equal(count, 1);
 });
 
-test("9. memoize 命中缓存", () => {
+test("6. memoize 命中缓存", () => {
   let count = 0;
   const slow = memoize((a, b) => {
     count += 1;

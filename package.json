@@ -7,11 +7,9 @@
     "day5": "node --test \"exercises/day05/*.test.mjs\"",
     "day1": "node --test \"exercises/day01/*.test.mjs\"",
     "day2": "node --test \"exercises/day02/*.test.mjs\"",
-    "day3": "node --test \"exercises/day03/*.test.mjs\"",
     "day4": "node --test \"exercises/day04/*.test.mjs\"",
     "day6": "node --test \"exercises/day06/*.test.mjs\"",
     "day7": "node --test \"exercises/day07/*.test.mjs\"",
-    "day8": "node --test \"exercises/day08/*.test.mjs\"",
     "day9": "node --test \"exercises/day09/*.test.mjs\"",
     "status": "node scripts/status.mjs",
     "p0d1": "node --test \"exercises/phase0/day01/*.test.mjs\"",
@@ -22,6 +20,10 @@
     "p0d6": "node --test \"exercises/phase0/day06/*.test.mjs\"",
     "p0d7": "node --test \"exercises/phase0/day07/*.test.mjs\"",
     "p0d8": "node --test \"exercises/phase0/day08/*.test.mjs\"",
-    "p0d9": "node --test \"exercises/phase0/day09/*.test.mjs\""
+    "p0d9": "node --test \"exercises/phase0/day09/*.test.mjs\"",
+    "day3a": "node --test \"exercises/day03/day03a.test.mjs\"",
+    "day3b": "node --test \"exercises/day03/day03b.test.mjs\"",
+    "day8a": "node --test \"exercises/day08/day08a.test.mjs\"",
+    "day8b": "node --test \"exercises/day08/day08.test.mjs\""
   }
 }

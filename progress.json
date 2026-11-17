@@ -100,13 +100,22 @@
       "status": "paused"
     },
     {
-      "id": "1-3",
+      "id": "1-3a",
       "stage": 1,
-      "title": "函数、this、闭包",
+      "title": "this 规则 + 防抖节流",
       "materials": "plan/phase1/day03.md",
-      "script": "day3",
-      "assertions": 9,
-      "status": "paused"
+      "script": "day3a",
+      "assertions": 6,
+      "status": "in-progress"
+    },
+    {
+      "id": "1-3b",
+      "stage": 1,
+      "title": "深拷贝（分步）",
+      "materials": "plan/phase1/day03.md",
+      "script": "day3b",
+      "assertions": 6,
+      "status": "pending"
     },
     {
       "id": "1-4",
@@ -145,13 +154,22 @@
       "status": "paused"
     },
     {
-      "id": "1-8",
+      "id": "1-8a",
       "stage": 1,
-      "title": "手写 Promise",
+      "title": "Promise 用法（all/any/allSettled/promisify）",
       "materials": "plan/phase1/day08.md",
-      "script": "day8",
+      "script": "day8a",
+      "assertions": 8,
+      "status": "pending"
+    },
+    {
+      "id": "1-8b",
+      "stage": 1,
+      "title": "手写 MyPromise",
+      "materials": "plan/phase1/day08.md",
+      "script": "day8b",
       "assertions": 12,
-      "status": "paused"
+      "status": "pending"
     },
     {
       "id": "1-9",
