@@ -12,5 +12,9 @@ export function getType(value) {
   // 1. null / undefined 单独处理（undefined 用 typeof，null 用 === null）
   // 2. typeof 结果不是 "object" 的直接返回（注意 function）
   // 3. 剩下的用 Object.prototype.toString.call(value).slice(8, -1).toLowerCase()
-  throw new Error("getType 未实现");
+  if (value === null) return "null";
+  if (value === undefined) return "undefined";
+  const type = typeof value;
+  if (type !== "object") return type;
+  return Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 }

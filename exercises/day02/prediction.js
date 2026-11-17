@@ -5,23 +5,23 @@
 
 export const answers = {
   // Q1: Number("")
-  q1: "TODO",
+  q1: 0,
   // Q2: Number(" 12 ")
-  q2: "TODO",
+  q2: 12,
   // Q3: Number(null)
-  q3: "TODO",
+  q3: 0,
   // Q4: Number(undefined)
-  q4: "TODO",
+  q4: NaN,
   // Q5: +[]
-  q5: "TODO",
+  q5: 0,
   // Q6: +{}
-  q6: "TODO",
+  q6: NaN,
   // Q7: "5" + 3
-  q7: "TODO",
+  q7: "53",
   // Q8: "5" - 3
-  q8: "TODO",
+  q8: 2,
   // Q9: Number.isNaN("abc")
-  q9: "TODO",
+  q9: false,
   // Q10: Number.isNaN(NaN)
-  q10: "TODO",
+  q10: true,
 };
