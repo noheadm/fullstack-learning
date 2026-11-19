@@ -223,8 +223,17 @@ worker2: 取 1 → 跑 → 取 4 → 跑 …
 worker3: 取 2 → 跑 → 取 5 → …
 ```
 
+**`Array.from({ length: n }, fn)`**：生成一个长度 n 的数组，`fn(元素, 下标)` 的返回值作为每一项。
+
+```js
+Array.from({ length: 3 }, (_, i) => i * 10);   // [0, 10, 20]
+```
+
+用它起 n 个 worker：
+
 ```js
 let next = 0;
+
 async function worker() {
   while (true) {
     const index = next++;
@@ -314,3 +323,5 @@ export async function mapLimit(items, limit, fn)
 3. `return await` 什么时候不能省？
 4. `withTimeout` 为什么必须清定时器？
 5. 分批 + `Promise.all` 和共享游标，差在哪？
+
+---

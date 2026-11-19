@@ -138,6 +138,57 @@ b.#count;     // → SyntaxError: Private field '#count' must be declared in an 
 
 ---
 
+## 3.5 先认识 `Map` 和 `Set`（第 4 节马上要用）
+
+前面你用的容器只有数组和对象。`Map` / `Set` 是另外两个内置容器，专门解决数组和对象的两个短板。
+
+**`Set` = 不重复值的集合**
+
+```js
+const s = new Set();
+s.add("a");
+s.add("a");        // 重复添加无效
+s.has("a");        // → true
+s.delete("a");     // → true
+s.size;            // → 0
+```
+
+- 自动去重，`add` 重复值不会报错，只是没效果
+- `has` 判断 O(1)，比数组 `includes` 快
+- 没有下标，不能 `s[0]`
+- 遍历：`for (const v of s)`
+
+数组去重的常见写法就是 `[...new Set(arr)]`。
+
+**`Map` = 键值对，且键可以是任意类型**
+
+```js
+const m = new Map();
+const key = { id: 1 };   // 对象也能当键
+m.set(key, "值");
+m.get(key);              // → "值"
+m.has(key);              // → true
+m.delete(key);
+m.size;
+```
+
+- 键可以是对象、函数，而普通对象的键只能是字符串/Symbol
+- 遍历：`for (const [k, v] of m)` 或 `m.forEach((v, k) => ...)`
+- 没有 `.length`，用 `.size`
+
+**和数组/对象对比**
+
+| 需求 | 用什么 | 原因 |
+|------|--------|------|
+| 有序、允许重复、按下标取 | 数组 | `arr[0]`、`push` |
+| 按字符串键取、要直接读写的配置 | 普通对象 | 写法直观，`obj.key` 最好读 |
+| 一堆不重复的东西、频繁判断存在 | `Set` | `has` 快，自动去重 |
+| 键是对象、或需要频繁增删键值对 | `Map` | 键不限类型，`size` 方便 |
+
+第 4 节的 `createCache` 用 `Map` 存缓存，是因为键可能是任意值；订阅者列表用 `Set`，是因为同一个回调不应被重复注册，而且取消订阅就是 `delete`。
+
+---
+
 ## 4. 模块模式：用闭包造一个"只有我能改"的对象
 
 模块模式 = 用函数作用域当容器：里面放私有状态，只 `return` 你想公开的方法。
@@ -348,3 +399,5 @@ export function compose(...fns)             // 从右到左组合
 2. 两个 `createStore()` 实例为什么不会共享状态？
 3. `#x` 和闭包藏状态，哪个更省内存，为什么？
 4. `curry` 遇到带默认参数的函数会出什么问题？
+
+---

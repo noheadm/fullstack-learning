@@ -62,6 +62,8 @@ const p = new Promise((resolve, reject) => {
 
 ## 2. `then` 到底做了什么
 
+先明确一个词：**thenable** 指任何带有 `then` 方法的对象（Promise 本身就是 thenable）。下面第三条会用到这个概念。
+
 `then` 有三条规则，缺一条实现就不对：
 
 **① 返回一个新的 Promise**
@@ -111,6 +113,17 @@ console.log("2");
 如果 Promise 已经 fulfilled 就同步执行回调，会导致同一个函数有时同步、有时异步（业界叫 Zalgo）。调用方无法写出稳定顺序，bug 会间歇出现。
 
 所以规范强制：`then` 的回调一律放到**微任务**队列。微任务在每轮宏任务结束后清空，所以顺序是：
+
+**`queueMicrotask(fn)`**：把一个函数排进"微任务队列"，当前同步代码跑完后立刻执行。
+
+```js
+queueMicrotask(() => console.log("微任务"));
+console.log("同步");
+
+// 输出顺序：同步 → 微任务
+```
+
+顺序总结：
 
 ```
 同步代码 → 微任务（Promise.then / queueMicrotask）→ 宏任务（setTimeout）
@@ -176,7 +189,14 @@ await Promise.race([Promise.resolve("fast")]);          // → "fast"
 await Promise.any([Promise.reject(new Error("a")), Promise.resolve("b")]); // → "b"
 ```
 
-`all` 的"立刻失败"不代表其他任务停了 —— 其他请求还在跑，只是结果被丢弃。要真取消，得配 `AbortController`。
+**`AggregateError`**：一种把多个错误打包进一个对象的错误类型，`Promise.any` 在全部失败时抛出它。
+
+```js
+await Promise.any([Promise.reject(new Error("a")), Promise.reject(new Error("b"))])
+  .catch((e) => e.name);   // "AggregateError"
+```
+
+`all` 的"立刻失败"不代表其他任务停了 —— 其他请求还在跑，只是结果被丢弃。要真取消，需要 **`AbortController`**：它提供一个 `signal` 交给请求，调用 `controller.abort()` 会让请求以 `AbortError` 失败。
 
 ---
 
@@ -299,3 +319,5 @@ export function promisify(fn)
 3. 回调返回 Promise 时，为什么不能直接当值用？
 4. `all` 和 `allSettled` 分别在什么场景用？
 5. `race([])` 会发生什么？
+
+---

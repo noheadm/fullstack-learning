@@ -24,6 +24,7 @@
     "day3a": "node --test \"exercises/day03/day03a.test.mjs\"",
     "day3b": "node --test \"exercises/day03/day03b.test.mjs\"",
     "day8a": "node --test \"exercises/day08/day08a.test.mjs\"",
-    "day8b": "node --test \"exercises/day08/day08.test.mjs\""
+    "day8b": "node --test \"exercises/day08/day08.test.mjs\"",
+    "docs": "node scripts/docs.mjs"
   }
 }

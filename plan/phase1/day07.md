@@ -280,6 +280,60 @@ class Puppy extends Dog {
 
 ---
 
+## 7.5 `get` / `set`：访问器属性
+
+**数据属性**：普通的"键 = 值"，存一个值。
+
+```js
+const obj = { n: 1 };   // n 是数据属性
+```
+
+**访问器属性**：不直接存值，读取时执行 `get` 函数，赋值时执行 `set` 函数。
+
+```js
+const obj = {
+  _n: 0,
+  get n() { return this._n; },        // 读 obj.n 时执行
+  set n(v) { this._n = v * 2; },      // 写 obj.n = x 时执行
+};
+
+obj.n = 5;    // 走 setter → _n = 10
+obj.n;        // 走 getter → 10
+```
+
+**在 class 里就是普通的 `get` / `set` 方法**，定义在 `prototype` 上：
+
+```js
+class User {
+  #name;
+  constructor(name) { this.#name = name; }
+  get name() { return this.#name; }
+  set name(v) { this.#name = v.trim(); }
+}
+```
+
+**用 `Object.defineProperty` 也能造**：
+
+```js
+const o = {};
+Object.defineProperty(o, "x", {
+  get() { return 1; },
+  set(v) { console.log("写入", v); },
+  enumerable: true,
+});
+```
+
+**和 1-4 的联系**：`Object.assign(target, src)` 在 `target` 上遇到同名的访问器属性时，会**调用它的 setter**；而 `{ ...src }` 是直接定义属性，不调用 setter。这就是 1-4 里"两个差别"中的第二个，现在能理解了。
+
+**查描述符**：
+
+```js
+Object.getOwnPropertyDescriptor({ get a() { return 1; } }, "a");
+// → { get: [Function], set: undefined, enumerable: true, configurable: true }
+```
+
+---
+
 ## 8. 速查表
 
 - 原型的作用：共享方法、省内存
@@ -387,3 +441,5 @@ new Dog("Rex")
 ```
 
 外加回答：`Child.prototype = Parent.prototype` 为什么是错的？`instanceof` 对 `"abc"` 为什么是 false？
+
+---

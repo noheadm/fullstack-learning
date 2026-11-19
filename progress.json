@@ -88,7 +88,7 @@
       "materials": "plan/phase1/day01.md",
       "script": "day1",
       "assertions": 10,
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "id": "1-2",
@@ -97,7 +97,7 @@
       "materials": "plan/phase1/day02.md",
       "script": "day2",
       "assertions": 14,
-      "status": "paused"
+      "status": "done"
     },
     {
       "id": "1-3a",
@@ -106,7 +106,7 @@
       "materials": "plan/phase1/day03.md",
       "script": "day3a",
       "assertions": 6,
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "id": "1-3b",
@@ -115,7 +115,7 @@
       "materials": "plan/phase1/day03.md",
       "script": "day3b",
       "assertions": 6,
-      "status": "pending"
+      "status": "done"
     },
     {
       "id": "1-4",
@@ -124,7 +124,7 @@
       "materials": "plan/phase1/day04.md",
       "script": "day4",
       "assertions": 13,
-      "status": "paused"
+      "status": "in-progress"
     },
     {
       "id": "1-5",

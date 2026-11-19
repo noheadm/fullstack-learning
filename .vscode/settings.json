@@ -1,0 +1,9 @@
+{
+  "files.readonlyInclude": {
+    "plan/**": true,
+    "exercises/**/*.test.mjs": true
+  },
+  "files.associations": {
+    "*.mjs": "javascript"
+  }
+}

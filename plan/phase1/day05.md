@@ -5,274 +5,253 @@
 
 ---
 
-## 0. 先看一个反直觉的排序
+## 1. 数组是什么
+
+**数组**：一串**有顺序**的值，用方括号创建。
 
 ```js
-[10, 9, 1].sort();            // → [1, 10, 9]
-[10, 9, 1].sort((a, b) => a - b); // → [1, 9, 10]
+const a = ["苹果", "香蕉", "橙子"];
+a.length;   // 3
+a[0];       // "苹果"      索引从 0 开始
+a[9];       // undefined   越界不报错
 ```
 
-`sort` 默认把元素转成**字符串**再比较，所以 `"10" < "9"`。这条规则每年都有人踩。
-
----
-
-## 1. 数组其实是对象
+**`Array.isArray(x)`**：判断 x 是不是数组，返回布尔值。
 
 ```js
-const a = [1, 2, 3];
-typeof a;              // → "object"
-Array.isArray(a);      // → true
-Object.keys(a);        // → ["0", "1", "2"]   ← 索引是字符串键
-a["0"] === a[0];       // → true
+Array.isArray([]);   // true
+Array.isArray({});   // false
+typeof [];           // "object"   ← typeof 分不出数组
 ```
 
-`length` 不是"元素个数"，而是"最大索引 + 1"，而且可写：
+**`length`**：等于"最大索引 + 1"，不是元素个数，而且可以写。
 
 ```js
 const b = [1, 2, 3];
-b.length = 1;
-b; // → [1]        截断
-
-b.length = 3;
-b; // → [1, <2 empty items>]   补空洞
+b.length = 1;   // → [1]          截断
+b.length = 3;   // → [1, <2 empty>]  补空洞
 ```
 
-空洞（empty）和 `undefined` 不一样：
+**稀疏数组**：空洞（empty）和 `undefined` 不是一回事。
 
 ```js
 const s = [1, , 3];
-s.length;  // → 3
-1 in s;    // → false   这个位置根本没键
-s[1];      // → undefined  但访问时看起来一样
+s.length;   // 3
+1 in s;     // false   这个位置没有键
+s[1];       // undefined  看起来一样，但遍历时会被跳过
 ```
-
-这意味着 `forEach`、`map` 会**跳过空洞**，而 `[1, undefined, 3]` 不会跳过。
 
 ---
 
-## 2. 原地修改 vs 返回新数组
+## 2. 读和改
 
-| 原地修改 | 返回新数组 |
-|---|---|
-| `push` `pop` `shift` `unshift` | `slice` `concat` `map` `filter` |
-| `splice` `sort` `reverse` `fill` `copyWithin` | `flat` `flatMap` `toSorted` `toReversed` |
-
-两个容易忘的点：
+**按下标读**：`a[i]`。**按下标写**：`a[i] = 值`，不会修改其他元素。
 
 ```js
-const a = [3, 1, 2];
-const r = a.sort();
-r === a; // → true   sort 返回同一个引用，不是副本
-
-const b = [3, 1, 2];
-const sorted = b.toSorted((x, y) => x - y); // ES2023，不改 b
-b;       // → [3, 1, 2]
-sorted;  // → [1, 2, 3]
+const a = [10, 20, 30];
+a[1];       // 20
+a[1] = 99;  // [10, 99, 30]
+a[4] = 5;   // [10, 99, 30, <empty>, 5]   长度变 5
 ```
-
-**要链式调用又要保留原数组**，就用 `toSorted` / `toReversed` / `slice()` 先复制。
 
 ---
 
-## 3. 为什么不能用 `delete` 删数组元素
+## 3. 增删：四个方法（都会改原数组）
+
+**`push(x)`**：尾部添加，返回新长度。
+**`pop()`**：尾部删除，返回被删的元素。
+**`unshift(x)`**：头部添加，返回新长度。
+**`shift()`**：头部删除，返回被删的元素。
 
 ```js
 const a = [1, 2, 3];
-delete a[1];
-a;        // → [1, <1 empty item>, 3]
-a.length; // → 3   ← 长度没变
+a.push(4);     // 返回 4，a → [1,2,3,4]
+a.pop();       // 返回 4，a → [1,2,3]
+a.unshift(0);  // 返回 4，a → [0,1,2,3]
+a.shift();     // 返回 0，a → [1,2,3]
 ```
 
-`delete` 只删键，留下空洞。正确做法：
-
-```js
-a.splice(1, 1); // 从索引 1 删 1 个 → [1, 3]
-```
-
-`splice(start, deleteCount, ...items)` 原地修改并返回被删元素；`slice(start, end)` 返回副本，别混。
+记忆：`push/pop` 在尾部，`unshift/shift` 在头部。`shift`/`unshift` 要挪动全部元素，是 O(n)。
 
 ---
 
-## 4. 遍历的三种方式
+## 4. 遍历
+
+**`for (let i = 0; i < a.length; i++)`**：能拿到下标，最灵活。
 
 ```js
-const a = [1, 2, 3];
-
-for (const x of a) console.log(x); // 可 break / continue，推荐
-a.forEach((x) => console.log(x));  // 不能 break
-for (const i in a) console.log(i); // 拿到的是 "0","1","2" 字符串，不要用
+for (let i = 0; i < a.length; i++) console.log(i, a[i]);
 ```
 
-`forEach` 想提前退出只能 `throw`，正常做法是换 `some` / `every`：
+**`for...of`**：只拿值，能 `break`。
 
 ```js
-const found = [1, 2, 3].some((x) => {
-  if (x === 2) return true; // true 表示"找到了，停止"
-  return false;
-});
-found; // → true
+for (const v of a) {
+  if (v > 2) break;
+  console.log(v);
+}
 ```
 
-`for...in` 遍历的是键，还会带上原型链上的可枚举属性，**永远不要用于数组**。
+**`forEach(fn)`**：遍历，无返回值，**不能 `break`**。
+
+```js
+a.forEach((v, i) => console.log(v, i));
+```
+
+**`for...in` 不要用于数组**：它给的是字符串下标 `"0" "1"`，还会带上原型链上的属性。
 
 ---
 
-## 5. `map` / `filter` / `reduce`
+## 5. 三个高阶函数
+
+**`map(fn)`**：一对一转换，返回**新数组**，长度不变。
 
 ```js
-[1, 2, 3].map((x) => x * 2);          // → [2, 4, 6]      长度不变
-[1, 2, 3].filter((x) => x % 2);       // → [1, 3]         只保留返回真值的
-[1, 2, 3].reduce((acc, x) => acc + x, 0); // → 6
+[1, 2, 3].map((n) => n * 2);   // [2, 4, 6]
+[1, 2].map((n) => { n * 2; }); // [undefined, undefined]  忘了 return
 ```
 
-`reduce` 的签名是 `cb(acc, current, index, array)`，第二个参数是初始值。**空数组不给初始值会抛错**：
+**`filter(fn)`**：按条件筛选，返回**新数组**，长度可能变短。
 
 ```js
-[].reduce((a, b) => a + b);      // → TypeError: Reduce of empty array with no initial value
-[].reduce((a, b) => a + b, 0);   // → 0
+[1, 2, 3, 4].filter((n) => n % 2 === 0);   // [2, 4]
+[1, 2, 3].filter((n) => n);                // [1, 2, 3]  返回的是值不是判断
 ```
 
-更隐蔽的是"累加对象"时忘记给初始值：
+**`reduce(fn, init)`**：把数组压成一个值。`fn(acc, cur)` 的返回值成为下一轮的 `acc`。
 
 ```js
-// 错：acc 第一次是 "a" 字符串，不是对象
+[1, 2, 3].reduce((acc, n) => acc + n, 0);   // 6
+[].reduce((acc, n) => acc + n);             // TypeError: 没给初始值
+[].reduce((acc, n) => acc + n, 0);          // 0
+```
+
+**累加对象的写法**（`groupBy` 要用）：
+
+```js
 ["a", "b", "a"].reduce((acc, w) => {
   acc[w] = (acc[w] ?? 0) + 1;
   return acc;
-}); // → 给字符串加属性，结果是个带属性的字符串，不是你要的对象
-
-// 对：给初始值
-["a", "b", "a"].reduce((acc, w) => {
-  acc[w] = (acc[w] ?? 0) + 1;
-  return acc;
-}, {}); // → { a: 2, b: 1 }
+}, {});   // { a: 2, b: 1 }
 ```
-
-这就是今天的 `groupBy` 必须写 `reduce(..., {})` 的原因。
 
 ---
 
 ## 6. 查找与判定
 
+**`includes(v)`**：是否包含，返回布尔。
+**`indexOf(v)`**：第一次出现的下标，找不到返回 `-1`。
+**`find(fn)`**：第一个满足条件的元素，找不到返回 `undefined`。
+**`findIndex(fn)`**：第一个满足条件的下标，找不到返回 `-1`。
+**`some(fn)`**：有一个满足就 `true`。
+**`every(fn)`**：全部满足才 `true`；空数组返回 `true`。
+
+```js
+const a = [1, 2, 3, 4];
+a.includes(2);        // true
+a.indexOf(2);         // 1
+a.find((n) => n > 2); // 3
+a.findIndex((n) => n > 2); // 2
+a.some((n) => n > 3); // true
+a.every((n) => n > 0); // true
+```
+
+**`indexOf` 找不到 `NaN`，`includes` 能找到**：
+
+```js
+[NaN].indexOf(NaN);   // -1
+[NaN].includes(NaN);  // true
+```
+
+---
+
+## 7. 排序
+
+**`sort(fn)`**：原地排序，**返回同一个数组**（不是副本）。
+
+```js
+const a = [3, 1, 2];
+a.sort() === a;   // true
+```
+
+**默认按字符串比较**，所以数字排序会翻车：
+
+```js
+[10, 9, 1].sort();                  // [1, 10, 9]   "10" < "9"
+[10, 9, 1].sort((x, y) => x - y);   // [1, 9, 10]
+```
+
+比较函数返回负数 → x 在前；正数 → y 在前。
+
+**`toSorted(fn)`**：ES2023 新增，排序但**返回新数组**。
+
+```js
+const b = [3, 1, 2];
+b.toSorted((x, y) => x - y);   // [1, 2, 3]
+b;                             // [3, 1, 2]  没变
+```
+
+---
+
+## 8. 截取、拼接、拍平
+
+**`slice(a, b)`**：截取 `[a, b)`，返回**新数组**，不改原数组。
+**`splice(i, n, ...items)`**：从下标 `i` 删 `n` 个，可插入新元素，**改原数组**，返回被删元素数组。
+**`concat(x)`**：拼接，返回新数组。
+**`join(sep)`**：拼成字符串，空数组得 `""`。
+**`flat(depth)`**：拍平嵌套数组，默认深度 1。
+**`flatMap(fn)`**：等价于 `map` 再 `flat(1)`。
+
+```js
+[1, 2, 3].slice(0, 2);        // [1, 2]
+[1, 2, 3].splice(1, 1);       // 返回 [2]，原数组变 [1, 3]
+[1, 2].concat([3]);           // [1, 2, 3]
+[1, 2, 3].join("-");          // "1-2-3"
+[1, [2, [3]]].flat();         // [1, 2, [3]]
+[1, [2, [3]]].flat(Infinity); // [1, 2, 3]
+```
+
+**删元素不要用 `delete`**：它只删键、留下空洞，`length` 不变。用 `splice`。
+
 ```js
 const a = [1, 2, 3];
-
-a.indexOf(2);        // → 1
-a.includes(2);       // → true
-a.find((x) => x > 1);      // → 2
-a.findIndex((x) => x > 1); // → 1
-a.some((x) => x > 2);      // → true    有一个满足
-a.every((x) => x > 0);     // → true    全部满足
-[].every((x) => false);    // → true    空数组恒真
-```
-
-`indexOf` 用 `===`，找不到 `NaN`；`includes` 用 SameValueZero，能找到：
-
-```js
-[NaN].indexOf(NaN);  // → -1
-[NaN].includes(NaN); // → true
+delete a[1];
+a;        // [1, <1 empty>, 3]
+a.length; // 3
 ```
 
 ---
 
-## 7. 性能：`shift` 是 O(n)
+## 9. 正则的最小知识（`topWords` 要用）
 
-```js
-const queue = [1, 2, 3];
-queue.shift(); // → 1，但后面所有元素都要往前挪
-```
-
-大量头插/头删时，`shift` / `unshift` 会让整体变成 O(n²)。替代方案：用 `push` + 索引指针，或者 `pop` 反向处理。
-
-另外 `sort` 是 O(n log n)，`includes` 是 O(n) —— 循环里套 `includes` 就是 O(n²)，数据量大时改用 `Set`。
-
----
-
-## 8. 附：最小正则（`topWords` 必用）
-
-`topWords` 要求"去掉标点"，用循环一个个判断很麻烦，正则一行就够：
+**正则**：描述"什么样的字符串"的模式，写在两个斜杠之间。
 
 ```js
 "cat, cat. dog!".replace(/[^\p{L}\p{N}\s]/gu, " ");
 // → "cat  cat  dog "
 ```
 
-拆开看：
-
 | 片段 | 含义 |
 |------|------|
-| `/.../` | 正则表达式的写法 |
-| `[^...]` | 中括号里是"要匹配的字符集合"，`^` 表示取反 |
-| `\p{L}` | 任意语言的字母（`u` 标志下才生效） |
+| `/.../` | 正则的写法 |
+| `[^...]` | 字符集合取反 |
+| `\p{L}` | 任意字母（需要 `u` 标志） |
 | `\p{N}` | 任意数字 |
-| `\s` | 空白字符（空格、换行、tab） |
-| `u` | 让 `\p{...}` 生效的标志 |
-| `g` | 全局替换，不加只替换第一个 |
+| `\s` | 空白字符 |
+| `u` | 让 `\p{...}` 生效 |
+| `g` | 全局替换，否则只换第一个 |
 
-合起来就是"把所有**不是**字母、数字、空白字符的字符替换成空格"。
-
-清理完再切词，多出来的连续空格用 `split(/\s+/)` 吸收：
+**`split(/\s+/)`**：按一个或多个空白切分。
 
 ```js
-"cat  cat  dog ".split(/\s+/); // → ["cat", "cat", "dog", ""]
+"cat  cat  dog ".split(/\s+/);   // ["cat","cat","dog",""]
 ```
 
-注意最后那个空字符串，要 `filter(Boolean)` 去掉。
-
-> 正则的完整语法后面单独讲，这里只要看懂这一段能抄着用即可。
-
-## 9. 速查表
-- 数组是对象，索引是字符串键，`length` 可写
-- 空洞 ≠ `undefined`：`in` 判断为 false，遍历会跳过
-- `sort` / `reverse` / `splice` 原地修改且返回原引用
-- `toSorted` / `toReversed` 返回新数组（ES2023）
-- 删元素用 `splice`，不要 `delete`
-- `forEach` 不能 break；`some` 可以提前结束
-- `reduce` 空数组不给初始值抛 `TypeError`
-- `indexOf` 找不到 `NaN`，`includes` 可以
-- `shift` / `unshift` 是 O(n)
-- `flat(depth)` 默认 1；`flatMap` = `map` + `flat(1)`
+最后那个空串用 `filter(Boolean)` 去掉。
 
 ---
 
-## 10. 常见坑（错误 ↔ 正确）
-
-**① 数字排序不传比较函数**
-
-```js
-[10, 9, 1].sort();                 // → [1, 10, 9]
-[10, 9, 1].sort((a, b) => a - b);  // → [1, 9, 10]
-```
-
-**② `reduce` 不给初始值**
-
-见第 5 节。累加对象、数组时必须给 `{}` / `[]`。
-
-**③ `flat` 深度写错**
-
-```js
-[1, [2, [3, [4]]]].flat();        // → [1, 2, [3, [4]]]  默认只拍一层
-[1, [2, [3, [4]]]].flat(Infinity); // → [1, 2, 3, 4]
-```
-
-**④ 用 `map` 做副作用**
-
-`map` 的语义是"返回新数组"，只想要副作用就用 `forEach`，否则会多创建一个没人用的数组。
-
-**⑤ 排序比较函数返回布尔值**
-
-```js
-a.sort((x, y) => x > y);   // 错：true/false 会被当 1/0，排序结果不可靠
-a.sort((x, y) => x - y);   // 对：返回负数 / 0 / 正数
-```
-
-**⑥ 边遍历边改数组**
-
-`forEach` 过程中 `splice` 会导致跳过元素。要删就倒序 `for` 循环，或先 `filter` 出来。
-
----
-
-## 11. 时间表（4h）
+## 10. 时间表（4h）
 
 | 时间 | 内容 | 产出 |
 |------|------|------|
@@ -280,13 +259,13 @@ a.sort((x, y) => x - y);   // 对：返回负数 / 0 / 正数
 | 0:50–1:10 | 实现 `groupBy` | 测试 1–2 绿 |
 | 1:10–1:40 | 实现 `flatten(depth)`（禁用 `arr.flat`） | 测试 3–6 绿 |
 | 1:40–2:30 | 实现 `topWords` | 测试 7–9 绿 |
-| 2:30–3:00 | 第 5–7 节复习 | notes.md |
+| 2:30–3:00 | 第 5–9 节复习 | notes.md |
 | 3:00–3:30 | 边界：空数组、深度 0、全标点 | 全绿 |
 | 3:30–4:00 | commit | hash |
 
 ---
 
-## 12. 程序框架 & 验收线
+## 11. 程序框架 & 验收线
 
 ```js
 export function groupBy(items, keyFn)        // 用 reduce 实现
@@ -298,6 +277,6 @@ export function topWords(text, n)            // 降序，同频按字母序
 
 1. `[10, 9, 1].sort()` 为什么不是 `[1, 9, 10]`？
 2. `delete arr[0]` 之后 `length` 为什么不变？
-3. `reduce` 的初始值在什么情况下是必须的？
-4. 哪些方法会改原数组？说出至少 5 个。
+3. `reduce` 的初始值什么时候是必须的？
+4. 哪些方法会改原数组？至少说出 5 个。
 5. `forEach` 里想 break 应该换什么？
