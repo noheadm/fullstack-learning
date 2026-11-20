@@ -224,6 +224,7 @@ f(); // → undefined（严格模式下 this 是 undefined，不是 window）
 ```js
 class E {}
 E(); // → TypeError: Class constructor E cannot be invoked without 'new'
+//   中文：class 必须用 new 调用，不能当普通函数调
 ```
 
 ---
@@ -443,3 +444,37 @@ new Dog("Rex")
 外加回答：`Child.prototype = Parent.prototype` 为什么是错的？`instanceof` 对 `"abc"` 为什么是 false？
 
 ---
+
+---
+
+## 13. 真实项目里用在哪
+
+**自定义错误类 → 按错误类型分支处理**
+
+```js
+class HttpError extends Error {
+  constructor(status, message) {
+    super(message);
+    this.status = status;
+  }
+}
+
+try {
+  await api.deleteUser(id);
+} catch (e) {
+  if (e instanceof HttpError && e.status === 401) redirectToLogin();
+  else throw e;
+}
+```
+
+**原型 → 读第三方库源码**
+
+Vue 2、Moment、很多老库都用原型挂方法；看到 `Foo.prototype.bar = function () {}` 要能反应过来这是"给所有实例加方法"。
+
+**`instanceof` → 错误分类、类型判断**
+
+```js
+e instanceof TypeError;   // 告诉你是用错了 API，还是网络失败
+```
+
+**没有它会怎样**：所有错误都当成同一种，无法区分"登录过期"和"服务器炸了"；读不懂库的内部分实现，只能靠猜。

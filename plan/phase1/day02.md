@@ -252,6 +252,7 @@ Number.isNaN(""); // → false  ← 这个才是"是不是 NaN"
 
 ```js
 1n + 1; // → TypeError: Cannot mix BigInt and other types
+//   中文：BigInt 不能和普通数字混算
 1n + 1n; // → 2n
 ```
 

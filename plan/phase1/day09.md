@@ -325,3 +325,42 @@ export async function mapLimit(items, limit, fn)
 5. 分批 + `Promise.all` 和共享游标，差在哪？
 
 ---
+
+---
+
+## 13. 真实项目里用在哪
+
+**加载 / 失败 / 成功三态**（每个联网页面都要写）
+
+```js
+setLoading(true);
+try {
+  const data = await api.getUsers();
+  setUsers(data);
+} catch (e) {
+  setError(e.message);
+} finally {
+  setLoading(false);
+}
+```
+
+**并发控制 → 批量上传**
+
+```js
+// 100 张图，同时最多传 3 张，避免把浏览器连接数打满
+await mapLimit(files, 3, uploadOne);
+```
+
+**重试 → 网络抖动**
+
+```js
+const data = await retry(() => api.getUsers(), { times: 3 });
+```
+
+**超时 + 取消 → 用户切换页面别再等**
+
+```js
+await withTimeout(api.getUsers(), 5000);
+```
+
+**没有它会怎样**：页面上只能显示"白屏"或"报错"，没有中间态；批量请求把接口打挂；一次网络抖动就要用户手动刷新。

@@ -321,3 +321,30 @@ export function promisify(fn)
 5. `race([])` 会发生什么？
 
 ---
+
+---
+
+## 11. 真实项目里用在哪
+
+**并行请求 → 页面首屏一次拿齐数据**
+
+```js
+const [user, orders, notices] = await Promise.all([
+  getUser(), getOrders(), getNotices(),
+]);   // 三个请求同时发，总耗时取最慢的那个，而不是三者相加
+```
+
+**`allSettled` → 部分失败也能展示**
+
+```js
+const results = await Promise.allSettled([getA(), getB()]);
+// A 挂了不影响 B 的结果，页面上可以只把 A 的位置显示成"加载失败"
+```
+
+**`race` → 超时**
+
+```js
+await Promise.race([fetchData(), timeout(5000)]);
+```
+
+**没有 Promise 会怎样**：三层回调嵌套、每层都要写一遍 `if (err)`，错误漏一层就静默失败。

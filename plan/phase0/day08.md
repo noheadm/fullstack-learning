@@ -93,6 +93,7 @@ total; // → 10
 ```
 
 **空数组 + 不给初始值会报错**：`[].reduce((a, b) => a + b)` → `TypeError`。
+报错原文是 `Reduce of empty array with no initial value`（中文：空数组又没有初始值，没法归约）。
 
 ---
 

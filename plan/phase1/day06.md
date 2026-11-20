@@ -132,6 +132,7 @@ class B {
 const b = new B();
 b.inc();      // → 1
 b.#count;     // → SyntaxError: Private field '#count' must be declared in an enclosing class
+//   中文：私有字段只能在声明它的类内部访问
 ```
 
 闭包方案和 `#` 方案的取舍：闭包每个实例都会新建一套方法（内存 ×N），`#` 的方法在原型上共享（内存 1 份）。状态多、实例多时优先 `#`。
@@ -296,6 +297,14 @@ const compose = (...fns) => pipe(...fns.slice().reverse());
 compose(dash, lower, clean)("  Hello World  "); // → "hello-world"
 ```
 
+**第一次调用时，所有参数都交给第一个函数**：
+
+```js
+pipe((a, b) => a + b, (x) => x * 2)(1, 2);   // (1+2)*2 = 6
+```
+
+所以 `pipe` 返回的函数要写成 `(...args)`，不能只收一个参数。
+
 为什么要处理 0 个函数？因为 `pipe()` 返回的函数被调用时应该原样返回输入，而不是 `undefined`。这种边界不写，测试就会挂。
 
 ---
@@ -387,7 +396,8 @@ export function compose(...fns)             // 从右到左组合
 
 - `get()` 返回当前状态的**浅拷贝**
 - `set(patch)` 浅合并；值没有变化时**不通知**订阅者
-- `subscribe(fn)` 返回取消订阅函数
+- `subscribe(fn)`：注册一个监听器，`set` 让状态发生变化时调用 `fn(新状态的拷贝)`；返回取消订阅函数
+- 「值没有变化」指浅比较：`patch` 里每个键的值都和当前值相等，就不通知
 
 ---
 
@@ -401,3 +411,42 @@ export function compose(...fns)             // 从右到左组合
 4. `curry` 遇到带默认参数的函数会出什么问题？
 
 ---
+
+---
+
+## 12. 真实项目里用在哪
+
+**闭包 → 事件回调记住自己那条数据**
+
+```js
+for (const user of users) {
+  button.addEventListener("click", () => deleteUser(user.id));
+  // 每个回调都记住了自己那一轮的 user，不需要额外存 data-id
+}
+```
+
+**模块模式 → 封装一个只有内部能改的状态**
+
+```js
+export const counter = (() => {
+  let n = 0;                       // 外部拿不到
+  return { inc: () => ++n, get: () => n };
+})();
+```
+
+**固定参数（柯里化思路）→ 请求封装**
+
+```js
+const request = (baseURL) => (path) => fetch(baseURL + path);
+const api = request("/api");   // baseURL 固定，之后只用写路径
+api("/users");
+```
+
+**`pipe` → 表单校验链**
+
+```js
+const validate = pipe(notEmpty, isEmail, maxLength(50));
+validate(input);
+```
+
+**没有它会怎样**：状态只能放全局，任何代码都能改；同一段逻辑到处复制；React Hooks、Redux 中间件这类框架源码看不懂。

@@ -9,7 +9,22 @@
  * @returns {{ inc: () => number, dec: () => number, value: () => number, reset: () => number }}
  */
 export function makeCounter(start = 0) {
-  throw new Error("makeCounter 未实现");
+  let count = start;
+  return {
+    inc() {
+      return ++count;
+    },
+    dec() {
+      return --count;
+    },
+    value() {
+      return count;
+    },
+    reset() {
+      count = start;
+      return count;
+    }
+  };
 }
 
 /**
@@ -19,7 +34,31 @@ export function makeCounter(start = 0) {
  * @returns {{ get: () => object, set: (patch: object) => object, subscribe: (fn: Function) => Function }}
  */
 export function createStore(initial = {}) {
-  throw new Error("createStore 未实现");
+  let state = { ...initial };
+  const listeners = new Set();
+
+  return {
+    get() {
+      return { ...state };
+    },
+    set(patch) {
+      const changedKeys = Object.keys(patch).filter((key) => state[key] !== patch[key]);
+      if (changedKeys.length === 0) {
+        return { ...state };
+      }
+      if (changedKeys.length > 0) {
+        state = { ...state, ...patch };
+        listeners.forEach((fn) => fn({ ...state }));
+      }
+      return { ...state };
+    },
+    subscribe(fn) {
+      listeners.add(fn);
+      return () => {
+        listeners.delete(fn);
+      };
+    }
+  };
 }
 
 /**
@@ -28,7 +67,15 @@ export function createStore(initial = {}) {
  * @returns {Function}
  */
 export function curry(fn) {
-  throw new Error("curry 未实现");
+  return function curried(...args) {
+    if (args.length >= fn.length) {
+      return fn(...args);
+    } else {
+      return function (...nextArgs) {
+        return curried(...args, ...nextArgs);
+      };
+    }
+  };
 }
 
 /**
@@ -37,7 +84,18 @@ export function curry(fn) {
  * @returns {Function}
  */
 export function pipe(...fns) {
-  throw new Error("pipe 未实现");
+  return (...args) => {
+    if (fns.length === 0) {
+      return args[0];
+    }
+    return fns.reduce((acc, fn, index) => {
+      if (index === 0) {
+        return fn(...acc);
+      } else {
+        return fn(acc);
+      }
+    }, args);
+  }
 }
 
 /**
@@ -46,5 +104,7 @@ export function pipe(...fns) {
  * @returns {Function}
  */
 export function compose(...fns) {
-  throw new Error("compose 未实现");
+  return function (arg) {
+    return fns.reduceRight((acc, fn) => fn(acc), arg);
+  }
 }
