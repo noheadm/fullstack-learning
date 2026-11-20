@@ -18,6 +18,19 @@
 export function topWords(text, n) {
   // TODO
   // 提示：先用正则清洗，再 reduce 计数，最后 sort
-  // 注意 sort 原地修改，别把内部数组直接暴露出去
-  throw new Error("topWords 未实现");
+// 注意 sort 原地修改，别把内部数组直接暴露出去  
+  // 示例：const words = text.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, '').split(/\s+/).filter(Boolean);
+
+  const words = text.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ').split(/\s+/).filter(Boolean);
+  const counter = words.reduce((acc, word) => {
+    acc[word] = (acc[word] || 0) + 1;
+    return acc;
+  }, {});
+  const sorted = Object.entries(counter).sort((a, b) => {
+    if (a[1] !== b[1]) return b[1] - a[1];
+    return a[0].localeCompare(b[0]);
+  });
+  
+  if (n <= 0) return [];
+  return sorted.slice(0, n);
 }

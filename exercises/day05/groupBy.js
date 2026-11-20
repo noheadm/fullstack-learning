@@ -10,5 +10,10 @@
 export function groupBy(items, keyFn) {
   // TODO: 用 reduce 实现
   // 提示：Object.create(null) 可以避免 __proto__ 之类的键污染
-  throw new Error("groupBy 未实现");
+  return items.reduce((acc, item, index) => {
+    const key = keyFn(item, index)
+    acc[key] = acc[key] || []
+    acc[key].push(item)
+    return acc
+  }, Object.create(null))
 }

@@ -57,3 +57,15 @@ test("9. topWords 去标点", () => {
     ["dog", 1],
   ]);
 });
+
+test("10. topWords：紧挨着的标点不能把两个词粘在一起", () => {
+  assert.deepStrictEqual(topWords("cat,dog", 2), [
+    ["cat", 1],
+    ["dog", 1],
+  ]);
+});
+
+test("11. topWords：n 小于等于 0 返回空数组", () => {
+  assert.deepStrictEqual(topWords("a b c", 0), []);
+  assert.deepStrictEqual(topWords("a b c", -1), []);
+});

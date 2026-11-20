@@ -135,6 +135,22 @@ a.forEach((v, i) => console.log(v, i));
 }, {});   // { a: 2, b: 1 }
 ```
 
+**`Object.create(null)`**：创建一个**没有原型**的空对象，当字典用。这样 `"__proto__"` 之类的键只是普通键，不会碰到继承属性。
+
+```js
+const dict = Object.create(null);
+dict["__proto__"] = 1;   // 安全，就是一条普通数据
+dict["__proto__"];       // 1
+```
+
+**`Object.entries(obj)`**：返回 `[键, 值]` 组成的数组。
+**`Object.values(obj)`**：返回所有值组成的数组。
+
+```js
+Object.entries({ a: 1, b: 2 });   // [["a",1],["b",2]]
+Object.values({ a: 1, b: 2 });    // [1, 2]
+```
+
 ---
 
 ## 6. 查找与判定
@@ -182,6 +198,12 @@ a.sort() === a;   // true
 ```
 
 比较函数返回负数 → x 在前；正数 → y 在前。
+
+**`localeCompare`**：字符串的比较函数，返回负数 / 0 / 正数，适合直接当 `sort` 的比较函数。
+
+```js
+["b", "a", "c"].sort((x, y) => x.localeCompare(y));   // ["a", "b", "c"]
+```
 
 **`toSorted(fn)`**：ES2023 新增，排序但**返回新数组**。
 
@@ -273,7 +295,7 @@ export function flatten(arr, depth = 1)      // 禁止 arr.flat
 export function topWords(text, n)            // 降序，同频按字母序
 ```
 
-9 条测试全绿，且能回答：
+11 条测试全绿，且能回答：
 
 1. `[10, 9, 1].sort()` 为什么不是 `[1, 9, 10]`？
 2. `delete arr[0]` 之后 `length` 为什么不变？

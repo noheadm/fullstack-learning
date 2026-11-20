@@ -14,5 +14,13 @@
 export function flatten(arr, depth = 1) {
   // TODO
   // 提示：depth <= 0 时元素原样保留；Array.isArray 判断要不要继续拆
-  throw new Error("flatten 未实现");
+  const result = [];
+  for (const item of arr) {
+    if (Array.isArray(item) && depth > 0) {
+      result.push(...flatten(item, depth - 1));
+    } else {
+      result.push(item);
+    }
+  }
+  return result;
 }

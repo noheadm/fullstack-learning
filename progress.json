@@ -132,7 +132,7 @@
       "title": "数组与数组方法",
       "materials": "plan/phase1/day05.md",
       "script": "day5",
-      "assertions": 9,
+      "assertions": 11,
       "status": "paused"
     },
     {
