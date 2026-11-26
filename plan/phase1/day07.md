@@ -44,11 +44,11 @@ function Cat() {}
 const c = new Cat();
 ```
 
-| 表达式 | 指向 | 说明 |
-|--------|------|------|
-| `Cat.prototype` | 一个对象（原型对象） | **函数才有**，用来给实例共享东西 |
-| `Object.getPrototypeOf(c)`（等价 `c.__proto__`） | `Cat.prototype` | **每个对象都有**，是查找的下一站 |
-| `Cat.prototype.constructor` | `Cat` | 指回构造函数，可被改写，不可靠 |
+| 表达式                                           | 指向                 | 说明                             |
+| ------------------------------------------------ | -------------------- | -------------------------------- |
+| `Cat.prototype`                                  | 一个对象（原型对象） | **函数才有**，用来给实例共享东西 |
+| `Object.getPrototypeOf(c)`（等价 `c.__proto__`） | `Cat.prototype`      | **每个对象都有**，是查找的下一站 |
+| `Cat.prototype.constructor`                      | `Cat`                | 指回构造函数，可被改写，不可靠   |
 
 ```js
 Cat.prototype.constructor === Cat;            // → true
@@ -61,6 +61,8 @@ c.constructor === Cat;                        // → true（沿原型链找到�
 - `Cat.prototype` 是**函数的一个普通属性**，里面放共享成员。
 - `[[Prototype]]`（`__proto__`）是**对象的内部槽**，指向它继承自谁。
 - `c.__proto__ === Cat.prototype` 只是 `new` 顺手建立的联系。
+
+**`obj.__proto__`** 是什么：一个访问对象原型的老式**访问器属性**，等价于 `Object.getPrototypeOf(obj)`；赋值等价于改原型。现代代码不推荐直接用它（性能差、语义混乱）。
 
 ---
 
@@ -185,20 +187,22 @@ new Parent().own; // → 子类的方法污染了父类
 ```js
 // 构造函数风格
 function A(x) { this.x = x; }
-A.prototype.get = function () { return this.x; };
+A.prototype.getX = function () { return this.x; };
 ```
 
 ```js
 // class 风格
 class A {
   constructor(x) { this.x = x; }
-  get() { return this.x; }
+  getX() { return this.x; }
 }
 ```
 
 看起来一样，实际有三点不同：
 
 **① 方法不可枚举**
+
+先明确词：**可枚举**指"会出现在 `Object.keys` / `for...in` 结果里"；不可枚举就是"存在但遍历不到"。
 
 ```js
 class B { m() {} }
@@ -230,6 +234,52 @@ E(); // → TypeError: Class constructor E cannot be invoked without 'new'
 ---
 
 ## 7. `extends` 与 `super`
+
+**`extends`**：声明"子类继承父类"，子类实例自动拥有父类原型上的方法和 getter。
+
+```js
+class Animal {}
+class Dog extends Animal {}     // Dog 继承 Animal
+```
+
+**`static` 方法**：挂在**类本身**上、不在 `prototype` 上的方法，用 `类名.方法()` 调用，实例用不到。
+
+```js
+class MathUtil {
+  static add(a, b) { return a + b; }
+}
+MathUtil.add(1, 2);         // 3
+new MathUtil().add;         // undefined   实例上没有
+```
+
+**`super`**：子类里用来引用父类的关键字，两种用法。
+
+| 写法 | 作用 |
+|------|------|
+| `super(...)` | 调用父类构造函数（必须在用 `this` 之前） |
+| `super.方法()` | 调用父类原型上的同名方法 |
+
+```js
+class Animal {
+  constructor(name) { this.name = name; }
+  speak() { return `${this.name} makes a sound`; }
+}
+
+class Dog extends Animal {
+  speak() { return super.speak() + "（汪）"; }
+}
+
+new Dog("Rex").speak();   // "Rex makes a sound（汪）"
+```
+
+**不写 constructor 时**，子类会自动把参数原样传给父类：
+
+```js
+class Cat extends Animal {}       // 等价于 constructor(...args) { super(...args) }
+new Cat("咪").name;               // "咪"
+```
+
+下面是一个完整的类：
 
 ```js
 class Animal {
@@ -313,7 +363,15 @@ class User {
 }
 ```
 
-**用 `Object.defineProperty` 也能造**：
+**`Object.defineProperty(obj, key, 描述符)`**：精确地定义或修改一个属性的行为。描述符里有三个开关：
+
+| 开关 | 含义 |
+|------|------|
+| `writable` | 值能不能被改 |
+| `enumerable` | 会不会出现在 `Object.keys` / `for...in` 里 |
+| `configurable` | 能不能被删除、能不能改描述符 |
+
+用它也能造访问器属性：
 
 ```js
 const o = {};
@@ -397,14 +455,14 @@ typeof "abc" === "string"; // → true
 
 ## 10. 时间表（4h）
 
-| 时间 | 内容 | 产出 |
-|------|------|------|
-| 0:00–0:45 | 第 0–2 节，画一张原型链图 | notes.md 里的图 |
-| 0:45–1:30 | 第 3–4 节 + 实现 `myNew`、`myInstanceOf` | 测试 1–6 绿 |
-| 1:30–2:10 | 第 5 节 + 实现 `inherit` | 测试 7–9 绿 |
-| 2:10–3:10 | 第 6–7 节 + 完成 `Animal` / `Dog` | 测试 10–14 绿 |
-| 3:10–3:40 | 第 8–9 节复述 | notes.md |
-| 3:40–4:00 | commit | hash |
+| 时间      | 内容                                     | 产出            |
+| --------- | ---------------------------------------- | --------------- |
+| 0:00–0:45 | 第 0–2 节，画一张原型链图                | notes.md 里的图 |
+| 0:45–1:30 | 第 3–4 节 + 实现 `myNew`、`myInstanceOf` | 测试 1–6 绿     |
+| 1:30–2:10 | 第 5 节 + 实现 `inherit`                 | 测试 7–9 绿     |
+| 2:10–3:10 | 第 6–7 节 + 完成 `Animal` / `Dog`        | 测试 10–14 绿   |
+| 3:10–3:40 | 第 8–9 节复述                            | notes.md        |
+| 3:40–4:00 | commit                                   | hash            |
 
 ---
 

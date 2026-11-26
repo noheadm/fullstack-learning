@@ -173,6 +173,8 @@ function withTimeout(promise, ms) {
 
 ### 真取消：`AbortController`
 
+**`AbortController`**：浏览器提供的取消控制器。`new` 出来得到两样东西：`controller.signal`（交给请求）和 `controller.abort()`（调用后让请求失败）。
+
 ```js
 // 示意（需要真实 URL 才能跑）
 const controller = new AbortController();
@@ -241,6 +243,7 @@ async function worker() {
     results[index] = await fn(items[index], index); // 按索引写，结果自动保序
   }
 }
+// Math.min(a, b)：取两个数里较小的那个
 await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
 ```
 
