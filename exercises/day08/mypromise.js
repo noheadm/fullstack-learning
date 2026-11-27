@@ -8,41 +8,95 @@ export class MyPromise {
   constructor(executor) {
     // TODO: 保存 state / value / handlers
     // TODO: 同步执行 executor(resolve, reject)，executor 抛错要转成 reject
-    throw new Error("MyPromise 未实现");
+    state = "pending";
+    this.value = undefined;
+    this.handlers = [];
+    this.executor = executor;
+    this.state = "pending";
+    this.handlers = [];
+    this.executor(resolve, reject);
   }
 
   then(onFulfilled, onRejected) {
     // TODO: 返回新的 MyPromise；回调异步执行；回调抛错 → reject
     // TODO: 回调返回 Promise/thenable 要吸收；返回自身要 reject TypeError
-    throw new Error("MyPromise#then 未实现");
+    return new MyPromise((resolve, reject) => {
+      this.handlers.push({ onFulfilled, onRejected, resolve, reject });
+    });
   }
 
   catch(onRejected) {
-    throw new Error("MyPromise#catch 未实现");
+    return this.then(undefined, onRejected);
   }
 
   finally(onFinally) {
-    throw new Error("MyPromise#finally 未实现");
+    return this.then(
+      (value) => {
+        onFinally();
+        return value;
+      },
+      (reason) => {
+        onFinally();
+        throw reason;
+      }
+    );
   }
 
   static resolve(value) {
-    throw new Error("MyPromise.resolve 未实现");
+    return new MyPromise((resolve) => resolve(value));
   }
 
   static reject(reason) {
-    throw new Error("MyPromise.reject 未实现");
+    return new MyPromise((resolve, reject) => reject(reason));
   }
 
   static all(iterable) {
-    throw new Error("MyPromise.all 未实现");
+    return new MyPromise((resolve, reject) => {
+      const results = [];
+      let completed = 0;
+      const total = iterable.length;
+
+      if (total === 0) {
+        resolve(results);
+        return;
+      }
+
+      iterable.forEach((promise, index) => {
+        MyPromise.resolve(promise)
+          .then((value) => {
+            results[index] = value;
+            completed += 1;
+            if (completed === total) {
+              resolve(results);
+            }
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      });
+    });
   }
 
   static race(iterable) {
-    throw new Error("MyPromise.race 未实现");
+    return new MyPromise((resolve, reject) => {
+      iterable.forEach((promise) => {
+        MyPromise.resolve(promise).then(resolve).catch(reject);
+      });
+    });
   }
 }
 
 /** node 风格回调转 MyPromise。 */
 export function promisify(fn) {
-  throw new Error("promisify 未实现");
+  return function (...args) {
+    return new MyPromise((resolve, reject) => {
+      fn(...args, (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  };
 }

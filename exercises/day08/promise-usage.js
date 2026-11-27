@@ -7,20 +7,33 @@
 
 /** 等所有 Promise 成功，按顺序返回结果（用 Promise.all） */
 export function waitAll(items) {
-  throw new Error("waitAll 未实现");
+  return Promise.all(items);
 }
 
 /** 返回第一个成功的结果；全部失败时把错误抛出去（用 Promise.any） */
 export async function firstSuccess(promises) {
-  throw new Error("firstSuccess 未实现");
+  return Promise.any(promises);
 }
 
 /** 等全部落定，返回 ["ok", "fail", ...]（用 Promise.allSettled） */
 export async function allStatuses(promises) {
-  throw new Error("allStatuses 未实现");
+  return Promise.allSettled(promises).then((results) =>
+    results.map((result) => (result.status === "fulfilled" ? "ok" : "fail"))
+  );
 }
 
 /** node 风格回调 (err, data) 转成 Promise */
 export function promisify(fn) {
-  throw new Error("promisify 未实现");
+  return function (...args) {
+    return new Promise((resolve, reject) => {
+      fn(...args, (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  };
 }
+
