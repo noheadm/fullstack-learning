@@ -6,22 +6,77 @@
 
 export class MyPromise {
   constructor(executor) {
-    // TODO: 保存 state / value / handlers
-    // TODO: 同步执行 executor(resolve, reject)，executor 抛错要转成 reject
-    state = "pending";
+    this.state = "pending";
     this.value = undefined;
     this.handlers = [];
-    this.executor = executor;
-    this.state = "pending";
-    this.handlers = [];
-    this.executor(resolve, reject);
+
+    const settle = (state, value) => {
+      if (this.state !== "pending") return;   // 只能落定一次
+      this.state = state;
+      this.value = value;
+
+      const handlers = this.handlers;         // 取出并清空
+      this.handlers = [];
+      for (const h of handlers) queueMicrotask(h);  // 异步执行
+    };
+
+    const resolve = (value) => {
+      // 自己等自己 → 永远等不到，规范要求直接 reject
+      if (value === this) {
+        return settle("rejected", new TypeError("Chaining cycle detected"));
+      }
+
+      if (value !== null && (typeof value === "object" || typeof value === "function")) {
+        let then;
+        try {
+          then = value.then;               // 取值也可能抛错
+        } catch (e) {
+          return settle("rejected", e);
+        }
+
+        if (typeof then === "function") {
+          let called = false;              // 防止 then 被调用多次
+          try {
+            then.call(
+              value,
+              (v) => { if (!called) { called = true; resolve(v); } },
+              (r) => { if (!called) { called = true; settle("rejected", r); } },
+            );
+          } catch (e) {
+            if (!called) { called = true; settle("rejected", e); }
+          }
+          return;                          // 关键：先不 settle，等对方落定
+        }
+      }
+
+      settle("fulfilled", value);
+    };
+    const reject = (reason) => settle("rejected", reason);
+
+    try {
+      executor(resolve, reject);
+    } catch (e) {
+      reject(e);                                // executor 抛错 = reject
+    }
   }
 
   then(onFulfilled, onRejected) {
-    // TODO: 返回新的 MyPromise；回调异步执行；回调抛错 → reject
-    // TODO: 回调返回 Promise/thenable 要吸收；返回自身要 reject TypeError
     return new MyPromise((resolve, reject) => {
-      this.handlers.push({ onFulfilled, onRejected, resolve, reject });
+      const run = () => {
+        try {
+          if (this.state === "fulfilled") {
+            resolve(typeof onFulfilled === "function" ? onFulfilled(this.value) : this.value);
+          } else {
+            if (typeof onRejected === "function") resolve(onRejected(this.value));
+            else reject(this.value);             // 没有 onRejected 就继续往下抛
+          }
+        } catch (e) {
+          reject(e);                             // 回调抛错 → 新 Promise 失败
+        }
+      };
+
+      if (this.state === "pending") this.handlers.push(run);
+      else queueMicrotask(run);                  // 已落定也要异步
     });
   }
 
@@ -47,33 +102,27 @@ export class MyPromise {
   }
 
   static reject(reason) {
-    return new MyPromise((resolve, reject) => reject(reason));
+    return new MyPromise((_, reject) => reject(reason));
   }
 
   static all(iterable) {
     return new MyPromise((resolve, reject) => {
       const results = [];
-      let completed = 0;
-      const total = iterable.length;
+      let count = 0;
+      let index = 0;
 
-      if (total === 0) {
-        resolve(results);
-        return;
-      }
-
-      iterable.forEach((promise, index) => {
+      for (const promise of iterable) {
+        const currentIndex = index++;
         MyPromise.resolve(promise)
           .then((value) => {
-            results[index] = value;
-            completed += 1;
-            if (completed === total) {
-              resolve(results);
-            }
+            results[currentIndex] = value;
+            count++;
+            if (count === index) resolve(results);
           })
-          .catch((error) => {
-            reject(error);
-          });
-      });
+          .catch(reject);
+      }
+
+      if (index === 0) resolve([]); // 空数组直接 resolve
     });
   }
 
@@ -90,7 +139,7 @@ export class MyPromise {
 export function promisify(fn) {
   return function (...args) {
     return new MyPromise((resolve, reject) => {
-      fn(...args, (err, result) => {
+      fn.call(this, ...args, (err, result) => {
         if (err) {
           reject(err);
         } else {
